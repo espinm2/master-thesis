@@ -7,13 +7,7 @@
 		\begin{figure}[t]
 		\centering
 		\includegraphics[width=0.8\textwidth]{overview}
-		\caption{This is an overview of the tabs and menus available on OASIS. 
-		A) login screen 
-		B) Create/Load Model tab
-		C) Sketch a Room tab
-		D) Generate 3D model tab
-		E) Create Daylighting Simulation tab
-		F) Analyze Simulation Tab}
+		\caption{This is an overview of the tabs and menus available on OASIS.}
 		\label{fig:overview}
 		\end{figure}
 
@@ -22,9 +16,11 @@
 		I used RibbonJS, a JavaScript port of Microsoft's Ribbon user interface, in order to present tools to users in a familiar style\cite{ribbonjs}. 
 		The whole interface is broken down into five tabs, as shown in figure-\ref{fig:overview}.
 		Each tab has a unique purposes and as a result each tab comes with its own set of buttons.
-		Navigation between tabs can be both linear and non-linear. I recommend that beginning users follow tabs linearly. 
-		The first tab, known as the \textit{Create/Load Model} tab contains a list of previously made sketches for loading.
-		Users can either click on the name of a previously created model or create a new models from the \textit{create/load model} tab.\\
+		Navigation between tabs can be both linear and non-linear. 
+		I recommend that first time users follow tabs linearly. 
+		After a successful login the the first tab users are directed to is the \textit{Create/Load Model} tab.
+		The \textit{Create/Load Model} tab contains a list of previously made sketches.
+		Users can either click on the title of a previously created model or create a new models from the \textit{Create/Load Model} tab.\\
 
 		\begin{figure}[t]
 		\centering
@@ -33,87 +29,127 @@
 		\label{fig:states}
 		\end{figure}
 
-
-		Given users follow OASIS linearly, the next tab users navigate to it the \textit{Sketch a Room} tab. In the \textit{Sketch a Room} tab users can design both rooms and floor plans to define architectural spaces.
+		Given users follow OASIS linearly, the next tab users navigate to is the \textit{Sketch a Room} tab. 
+		In the \textit{Sketch a Room} tab users can design both rooms and floor plans to define architectural spaces.
 		After a user has created a sketch, the next tab users navigate to is the \textit{Generate 3D Model} tab. 
-		Here users will view a 3D interpretation, without daylighting, of their sketch. 
+		Here users will view a 3D interpretation of their sketch. 
 		Users can then generate daylight renderings by navigating to the \textit{Create Daylighting Simulation} tab.
 		While on the \textit{Create Daylighting Simulation} tab users can create new renderings or view previously created renderings.
 		Figure-\ref{fig:states} illustrates how tab navigation can be used both linearly and non-linearly in OASIS.
-		All in all, we follow familiar user interface visuals and behavior to reduce the learning curve of using our tool and allow users to quickly run daylighting analysis in the fewest number of click possible.\\
-
+		All in all, we follow familiar user interface visuals and behavior to reduce the learning curve of using our tool and allow users to quickly run daylighting analysis with the least cost of effort.\\
 
 		Another framework used in our sketching interface is RaphaelJS\cite{}.
 		Raphael JS is a 3D vector graphics library for JavaScript. 
-		I use RaphaelJS to handle the 2D graphics created by and objects placed into sketches. I also use RaphaelJS because it supports vectorized lines and objects, allowing our interface  to be re-sizable with lost of visual quality.
+		I use RaphaelJS to handle the 2D graphics of objects placed into sketches. I also use RaphaelJS because it supports vectorized lines and objects, allowing our interface  to be re-sizable with lost of visual quality.
 		I also use Raphael FreeTransform in conjunction with RaphaelJS\cite{}. 
 		The FreeTransform extension is used to create handles on furniture items so that users may easily rotate and reposition these items where they please.
 		Figure-\ref{fig:oldvh} demonstrates the handles FreeTransform generates for object manipulation.\\
+
+		\begin{figure}[h]
+		\centering
+		\includegraphics[width=1.0\textwidth]{new_pipeline}
+		\caption{OASIS pipeline diagram with the author's contributions noted in blue.}
+		\label{fig:new_pipeline}
+		\end{figure}
+
+		As mentioned before OASIS is a alternative interface to the Virtual Heliodon. 
+		The system pipeline in Figure-\ref{fig:new_pipeline} illustrates the components involved in OASIS.
+		In addition, Figure-\ref{fig:new_pipeline} notes all portions of OASIS that I directly contributed to.
+		The physical sketch interpretation algorithm that the Virtual Heliodon uses to generate watertight 3D meshes for simulations requires sketches be given as a collection of model primitives. 
+		Model primitives are stored in an intermediary primitives file where each line describes a wall,window, or furniture item in a sketch.
+		In the Virtual Heliodon the intermediary primitives file is created by a simple computer vision algorithm that detects walls,windows, and tokens through colored markers.
+		In our sketching interface I directly create this intermediary primitives file through the conversion of user created Raphael Objects.
+		Figure-\ref{fig:new_pipeline}A illustrates where the conversion occurs in our system pipeline.
+		When users convert their sketches into 3D models, the physical sketch interpretation algorithm reads in the generated intermediary primitives file.
+		The physical sketch interpretation algorithm outputs a closed triangle mesh that, users can view though the \textit{Generate 3D Model} tab.
+		Given confirmation that a 3D generated model matches user's intention, users can create a daylighting simulation request in the \textit{Create Daylighting Simulation} tab.
+		This portion of OASIS's pipeline is denoted in Figure-\ref{fig:new_pipeline}B.
+		After the submission of a daylighting simulation request, we use the daylight simulation rendering engine to produce textures.
+		These texture capture the illumination of scene in a viewpoint independent manner.
+		On the \textit{Analyze Daylighting} tab we map textures into the scene and display a 3D daylighting rendering of the model.
+		Figure-\ref{fig:new_pipeline}C illustrates where texture mapping occurs in the system pipeline.
+		In brief, OASIS uses two main components of the Virtual Heliodon and provides an alternative interface to both create models and create daylighting visualizations.
 
 	\subsection{Usability Features}
 
 		\begin{figure}[t]
 		\centering
 		\includegraphics[width=0.8\textwidth]{oldvh}
-		\caption{Similarities between old drag and drop interface and the Virtual Heliodon's Tangible User Interface. A) Users select a physical primitive from a collection of primitives. B) Users place primitive on the table top. C) Users adjust the primitive as desired. D) Users select a primitive from a tray on the bottom of the interface. E) Users drag that item onto the table. F) Users use FreeTransform handles to scale and rotate the primitive as desired.}
+		\caption{
+		Similarities between old drag and drop interface and the Virtual Heliodon's Tangible User Interface. 
+		% A) Users select a physical primitive from a collection of primitives. 
+		% B) Users place primitive on the table top. 
+		% C) Users adjust the primitive as desired. 
+		% D) Users select a primitive from a tray on the bottom of the interface. 
+		% E) Users drag that item onto the table. 
+		% F) Users use FreeTransform handles to scale and rotate the primitive as desired.
+		}
 		\label{fig:oldvh}
 		\end{figure}
 
 		There are direct and indirect usability features in the online sketching interface.
-		To begin, in order to make the interface as simple as possible I brainstormed the several ways users can place wall and windows onto our sketching interface.
+		To begin, in order to make the interface as simple as possible, I brainstormed the several ways users can place wall and windows onto our online sketching interface.
 		At first, users could create walls and windows by drag and dropping them into the canvas as showing in figure-\ref{fig:oldvh}.
-		Users could then further manipulate walls and windows by both rotating the item around its center axis and by scaling the item though use the FreeTransform handles. 
-		Early feedback showed that this approach was both unintuitive and did not translate well into our online sketching interface, despite mimicking how wall primitives were placed in the Virtual Heliodon.
-		Figure-\ref{fig:oldvh} shows how users placed walls into a scene on both the virtual Heliodon and on the first version of the online sketching interface.
-		My next approach mimics how users draw on paper and in sketching software.
+		Users could then further manipulate walls and windows by both rotating items around their center axis and by scaling items though use the FreeTransform handles. 
+		Figure-\ref{fig:oldvh} shows how users place walls into a scene on both the virtual Heliodon and on the first version of the online sketching interface.
+		Both Figure-\ref{fig:oldvh}A and D illustrate how users have to select a primitive from a collection of primitives in the Virtual Heliodon and first version of our online interface.
+		Figure-\ref{fig:oldvh}B and E show how users both have to place selected primates on a surface, such as the physical table top or the online interface's canvas.
+		Figure-\ref{fig:oldvh}C and F demonstrate how users adjust either physical primates through physical interaction or though the manipulation of FreeTransform handles in the online interface.
+		However, despite mimicking how wall primitives were placed in the Virtual Heliodon, early feedback showed that this approach was both unintuitive and did not translate well into our online sketching interface.
+		My next approach mimics how users draw on paper and in most sketching software.
 		Users first click on the wall button located in the ribbon of the \textit{Sketch a Room} tab.
 		The by clicking and dragging anywhere on the canvas users are shown a preview of where walls will be drawn.
-		By releasing the mouse a preview will be replaced by a a drawn line, representing a wall.
-		Once a wall is drawn further editing is not allowed, however, users can remove any wall later on.
+		By releasing the mouse the preview will be replaced by a a drawn line, representing a wall.
+		Once a wall is drawn further editing is not allowed.
 		To keep with the spirit of sketching, windows are also placed into a sketch by being drawn similarly to walls.
 		However, unlike walls, windows need to be on or associated with a wall.
 		As a result windows need to be drawn on or near a wall.
 		In the interest of the user, windows do not need to be drawn exactly on walls.
 		Windows when drawn near walls with similar angles will automatically target snap onto a wall.
-		This snapping feature makes drawing windows less relent on users' precision with a cursor, and instead focuses on users' intention.
+		This snapping feature makes drawing windows less relent on users' precision with a mouse, and instead focuses on users' intention.
 		Figure-\ref{fig:wall_win} demonstrates how walls and windows are drawn onto the canvas in our sketching interface.
 
 		\begin{figure}[t]
 		\centering
 		\includegraphics[width=0.8\textwidth]{wall_win}
-		\caption{How to create walls and windows on the new sketching interface. A) Users select the wall button located on the ribbon. B) Users click and hold left mouse button anywhere on the canvas. C) Users drag their mouse to desired position while still holding the left mouse button. D) Once define wall location, angle, and length users can release the mouse button and a wall is drawn onto the canvas. E) To draw  windows users first select the window button located on the ribbon. G-H) Users draw windows just as they draw walls, windows will automatically snap to nearby wall upon left mouse button release. }
+		\caption{How to create walls and windows on the new sketching interface. A) Users select the wall button located on the ribbon. B) Users click and hold left mouse button anywhere on the canvas. C) Users drag their mouse to desired position while still holding the left mouse button. D) Once the endpoint of the wall is defined users can release the mouse button and a wall is drawn onto the canvas. E) To draw  windows users first select the window button located on the ribbon. G-H) Users draw windows just as they draw walls, windows will automatically snap to nearby wall upon release of the left mouse button. }
 		\label{fig:wall_win}
 		\end{figure}
 
 		Unlike walls and windows, furniture items are placed into the canvas by first clicking on a furniture button  and then manipulating the newly create furniture item via translations and rotations. 
-		Furniture items can be rotated along its center axis via FreeTransform handles attached to the furniture item.
+		Furniture items can be rotated along their center axis via FreeTransform handles attached to the furniture item.
 		Furniture items can also be translated by clicking and dragging on the item itself.
 		The manipulations of furniture items is similar to the manipulation of walls in the original interface as show in Figure-\ref{fig:oldvh}.
-		Item manipulations via handles and drag and drop mechanics is a common UI mechanism. 
-		Users will be familiar with this mechanism if they have had experience using photo editing software or slide-based presentation tools such as Microsoft PowerPoint\cite{}.
+		Item manipulation via FreeTransform handles and drag and drop mechanics are a common UI mechanisms. 
+		Users will be familiar with these mechanisms if they have had experience using photo editing software or slide-based presentation tools such as Microsoft PowerPoint\cite{}.
 		The removal of all sketch based elements and furniture is simple as well.
-		Users must first click on the remove button then click on any items they wish to remove. 
-		Walls, windows, and furniture under the cursor will be highlighted red and only removed upon a mouse click.
-		Figure-\ref{fig:remove} shows how to remove items on OASIS.
-
+		Firstly, users must click on the remove button as illustrated in Figure-\ref{fig:remove}A, secondly users must mouse over the item to be removed as shown in Figure-\ref{fig:remove}B.
+		Items to be removed upon the left mouse click are highlighted in red as shown in Figure-\ref{fig:remove}C.
+		No items are removed from the canvas until the users left mouse clicked on a selected item.
+		
 		\begin{figure}[t]
 		\centering
 		\includegraphics[width=0.8\textwidth]{remove}
-		\caption{How to remove an item from the canvas. A) First users must select the remove button located on the ribbon. B) Second the user must move mouse over the time to be deleted. C) Item to be deleted upon left mouse click is highlighted red. D) If the red highlighted item is the correct item to be removed click the left mouse button. }
+		\caption{How to remove an item from the canvas. 
+		% A) First users must select the remove button located on the ribbon. 
+		% B) Second the user must move mouse over the time to be deleted. 
+		% C) Item to be deleted upon left mouse click is highlighted red. 
+		% D) If the red highlighted item is the correct item to be removed click the left mouse button. 
+		}
 		\label{fig:remove}
 		\end{figure}
 
 		Daylighting varies by many factors.
 		Notably, the cardinal orientation of user sketches needs to be defined in order to simulate direct lighting.
-		In order to define cardinal orientation on OASIS, users must first click on the orientation button located in the ribbon of the \textit{Sketch a Room} tab.
-		Then users can click and drag anywhere on the canvas.
-		Holding the left mouse button on canvas will move the North and South labels around the circumference of the canvas to define where North and South are oriented.
+		In order to define cardinal orientation users must first click on the orientation button, located in the \textit{Sketch a Room} tab's ribbon.
+		Then users can click and drag anywhere on the canvas to define cardinal orientation.
+		Specifically, holding the left mouse button on canvas will move the North and South labels around the circumference of the canvas to define the cardinal orientation of the sketch.
 		Moreover, daylight varies by geographical location as wall as cardinal orientation.
-		To define a geographical location we have users click on the location button located right next to the orientation button.
+		To define a geographical location we have users click on the location button located next to the orientation button.
 		Clicking the location button will bring up a map projection where users can select their model's geographical location by clicking anywhere on the map.
 		Users do not need to fill in exact latitude and longitude values because we intend OASIS to be an early design tool. 
-		Moreover, daylighting varies significantly depending on what hemisphere a model is located. Daylighting also varies depending on a model's location relative to the equator.
-		Inaccurately selecting a geographical position off by an entire state or even country will not vary daylighting much.
+		Furthermore, daylighting varies significantly depending on what hemisphere a model is located. Daylighting also varies depending on a model's location relative to the equator.
+		Inaccurately selecting a geographical position off by an entire state or even country will not vary daylighting result much.
 		Figure-\ref{fig:geoloc} illustrates how a sketch's cardinal orientation and geographical location are defined.
 
 		\begin{figure}[t]
@@ -135,7 +171,7 @@
 		Adding furniture items of fixed size to the interface implies a sense of scale.
 		Statically sized furniture items give users an idea of how big or small other element in a room are.
 		Although daylighting is scale invariant, enforcing scale gives us, the researcher, the ability to compare real world spaces with space reproduced in our interface.
-		Likewise, to make comparisons between user sketches and 3D models generated by the physical interpretation algorithm easier, I make sure the top down view both models match.
+		Likewise, to make comparisons between users' sketches and 3D models generated by the physical sketch interpretation algorithm straightforward, I set an identical top down view for both user sketches and interpreted 3D models.
 		Lastly, I make sure to automatically save models when users switch between tabs.
 		Rather than manually having users save models, we decided that automatically saving models would be one less concern to the user.
 
@@ -153,35 +189,37 @@
 	Specifically, I use the WebGL library ThreeJS\cite{}.
 	ThreeJS is a framework that provides useful wrappers for common WebGL functions.
 	WebGL is supported on most web browsers including Google Chrome and Mozilla Firefox\cite{}.
-	WebGL gives us the ability to have this sketching interface online in a platform independent manner.
+	WebGL gives us the ability to have our sketching interface online in a platform independent manner.
 	Our viewer can be used to view both 3D models produced by the physical sketch interpretation algorithm and rendering produced by the daylighting rendering engine as shown in figure-\ref{fig:viewer}.
+	The viewer is used in the \textit{Generate 3D Model} and \textit{Analyze Simulation} tab.
 	The output from both of these components are different and as a result our viewer must be able to handle both texture and non-textured models.
 	Output produced by both the physical sketch interpretation algorithm and the daylighting rendering engine is saved as a 3D triangle mesh in a non-standard OBJ file format.
-	The OBJ file is the parsed and rendered for viewing with ThreeJS and WebGL.
+	The OBJ file is then parsed and rendered for viewing using ThreeJS and WebGL.
 	Additional, output from the daylighting rendering engine requires the extra step of texture mapping.
-	Our viewer lets users change their view of the 3D model though rotation, panning and zooming. Users can press, hold, and drag  the left mouse button to rotate a model along it center axis.
-	To zoom in users must hold a modifier key, such as the shift or ctrl key, and press hold and drag their left mouse to zoom in or out.
-	Lastly, users can pan a model using the keyboard arrow keys.
+	Our viewer lets users change their view of the 3D model though rotation, panning and zooming. 
+	Users can hold and drag  the left mouse button to rotate a model along it center axis.
+	To zoom into a model users must hold first hold down a modifier key, such as the shift or ctrl button, then hold left mouse button while dragging vertically across the model.
+	Lastly, users can pan around a model using the standard keyboard arrow keys.
 
 	\begin{figure}[t]
 	\centering
 	\includegraphics[width=0.8\textwidth]{fps}
-	\caption{A and B are examples of zooming into a model to observe a first person point of view.}
+	\caption{Figure A illustrates a 3D interpreted model zoomed into a first person view. Figure B is the same view in the daylight rendering of the model.}
 	\label{fig:fps}
 	\end{figure}
 
 	Aside from basic navigation, there are a couple of usability features build into the viewer.
 	Firstly, just as with the sketching interface the viewer can be scaled to fit any web browser window without loss of quality. 
-	Also when viewing output from the physical sketch interpretation algorithm, we render walls facing user's viewpoint as transparent, as showed in Figure-\cite{}. 
-	These transparent walls  allow users to get a better view models from multiple viewpoints other than the fault overhead view.
+	Also when viewing output from the physical sketch interpretation algorithm, we render walls facing user's viewpoint as transparent, as showed in Figure-\cite{fig:viewer}B. 
+	These transparent walls  allow users to get a better view models from multiple viewpoints other than the default overhead view.
 	By default the ceiling is not displayed so users can peer into a 3D model from a top down view.
-	Furthermore, when viewing output from the physical sketch interpretation algorithm, users can toggle the ceiling as viewable. 
+	However, when viewing output from the physical sketch interpretation algorithm, users can toggle the ceiling as viewable. 
 	This is useful if users want to see what portions of the model are interpreted as interior and exterior. 
-	The ceiling is useful to see where skylights are located in a model.
+	The ceiling is also useful to see where skylights are located in a model.
 	Toggling the ceiling is also useful when zooming into the model to visualize a space from first person point of view -- as shown in Figure-\ref{fig:fps}.
-	Additionally, when viewing daylighting renderings, users can toggle between a regular render and a rendering with false color visualizations for locating portions of a room that suffer from over and under illumination.
-	Previous work on over and under illumination visualizations by Nasman et al. is used to render blue checkerboard textures on locations suffering of under illumination and re check board textures on locations suffering from over illumination\cite{nasman2013physical}.
-	Figure-\ref{fig:false_color} demonstrates how to toggle between false color rendering and normal daylight renderings.
+	Additionally, when viewing daylighting renderings, users can toggle between a regular rendering and a rendering with false color visualizations for locating portions of a room that suffer from over and under illumination by clicking on the analysis button located on the \textit{Analyze Daylighting} tab's ribbon.
+	Previous work on over and under illumination visualizations by Nasman et al. is used to render blue checkerboard textures on locations suffering of under-illumination and red checkerboard textures on locations suffering of over-illumination\cite{nasman2013physical}.
+	Figure-\ref{fig:false_color} to toggle between false color rendering and normal daylight renderings.
 	In short, the 3D model viewer gives users basic navigation functionality, in addition to a handful of other useful features.
 
 	\begin{figure}[t]
@@ -190,5 +228,49 @@
 	\caption{An example of false color renderings. A) Is a model that suffers from under illumination in the left most portion. B) Is the same model with false color visualizations toggled. Blue checker-board patterns are used to denote under illumination and red checker-board batter are used to note over illumination.}
 	\label{fig:false_color}
 	\end{figure}
+
+
+\section{Task Manager}
+
+	\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.8\textwidth]{task}
+	\caption{How to create a request for daylighting simulations. 
+		A) Users first click on the create new task button.
+		B) Users then define daylighting parameters such as date and time. Once complete users can click the submit button to submit their request.
+		C) Users task is added to the able and the status of the task is displayed.
+		D) Once task are complete users can click on the view button
+		E) Users will be redirected to the \textit{Analyze Simulation} tab to view the renderings.
+	}
+	\label{fig:task}
+	\end{figure}
+
+
+	\paragraph{Creating a Request}
+	After users convert their architectural sketches to 3D models, user can then navigate to the \textit{Create Daylighting Simulation} tab.
+	There is a task manager where users can create request for daylighting simulations and view previous renderings.
+	Figure-\ref{fig:task} demonstrates how users can create request for daylighting simulations on the task manager.
+	Users can create request by clicking the new task button located in the ribbon on the \textit{Create Daylighting Simulation} tab.
+	Clicking the button will create a new row in the table of previously created task. 
+	Some parameters need to be defined before submitting a rendering request to the server.
+	Since daylighting varies temporally the date, time, and timezone must be defined prior to submitting a request.
+	Given a model's geographical location we approximate the timezone, however, users can set any timezone they wish.
+	Once task are submitted users will be informed of a task's status by either displaying \textit{running} or \textit{in queue}.
+	The \textit{running} status means the submitted task is currently being processed by the server and the \textit{in queue} status means the task is currently in line to processed by the server.
+	Once renderings are complete and texture are available, a task's status will be replaced with a view button.
+	Upon clicking the view button users will be directed to the \textit{Analyze Simulation} tab where their rendering will be viewable.
+
+	\paragraph{Client Server Approach}
+	For rendering we follow a client-server model since calculating global illumination required for daylighting simulation is too computationally expensive to run on most user's machines.
+	Users define a set of parameters per rendering request and then submit a request to the server.
+	The server is aware of all pending request and processes all request in a first come first serve manner.
+	The model and the set of input parameters are then passed along to the daylighting rendering engine.
+	Once the renderings are complete, the daylighting rendering engine places cameras into the scene to capture the illumination on the walls, furniture, and floor as images.
+	The images captured by the cameras are saved as image textures.
+	We then remap these textures onto the walls, furniture items, and floor in the WebGL 3D model.
+	Another important usability feature added was the caching of previous rendering on the machine hosting the OASIS.
+	The caching of previous renderings allows user to quickly view previous renderings without having to rerun the simulations on the server.
+
+
 
 
