@@ -1,0 +1,64 @@
+Aside from creating an interface for simulations and analysis, I also made preparations for a pilot user study aimed at answering a few evaluation questions about the usability of our online interface.
+Specifically the first question we are looking to answer is whether OASIS is accessible.
+The second question we are looking to answer is whether OASIS is an easy to use interface for both novices and users with relevant molding experience.
+Lastly, we are investigating if OASIS is a step the in the right direction as an early design tool for daylighting analysis.
+In addition to questions pertaining to the online interface's usability, I am also interested in analyzing the perceived accuracy of the physical sketch interpretation algorithm when using non-physical sketches.
+Furthermore, I would also like to collect qualitative feedback on users understanding of simulation results.
+Also, I would like to analyze the general performance of our system;
+As an early design tool it is imperative that we deliver both sketch interpretations and model renderings quickly.
+Our eventual goal is that OASIS will be an iterative design tool for creativity solving daylighting problems and exploring initial designs with a minimal cost of effort.
+Moreover, the hope is that this pilot user study will provide us valuable feedback to improve OASIS as an early design tool for daylighting.
+
+The physical sketch interpretation algorithm has gone through three previous user studies \cite{}.
+Two of those studies are direct elevations of the physical sketch interpretation algorithm's accuracy on physical sketches.
+These two studies are featured in INSERT_PAPER_HERE by Cutler and Nasman.
+The first study aims at analyzing the range of designs possible with physical primitives on the Virtual Heliodon.
+The second study aims at analyzing the accuracy of the physical sketch interpretation algorithm on ambiguous sketches.
+In our user study we use non-physical sketches and do not explicitly attempt to analyze the accuracy of the physical sketch interpretation algorithm with non-physical sketches. Yet, I hope that some quantitative feedback will verify that users' intentions are matched at rates similar to these previous studies.
+It is also important to note that while these previous studies gathered over 300 physical sketches they did so from a medium sized pool of users.
+This pool of users varied from 13 to 30 participants.
+It is also important to note that these studies each took on average 2 months to complete data collection. Moreover, the pool of users these two studies drew upon was comprised of mostly students at Rensselaer Polytechnic Institute.
+Similarly, the \textit{evaluation of user accuracy in a tangible user interface for architecture design} by Nasman et al. was comprised of 6 architecture students and 7 non-architecture students. While, I do not expect to match the number of models produced per users, I hope that the overall number of models produced will be both quantitatively larger and from a broader range of users.
+In addition the accessibility and autonomy of our online interface will make the marginal cost of collecting data per users much smaller than the tangible user interface on the Virtual Heliodon.
+
+
+There were various frameworks considered for OASIS.
+Our requirement of accessibility to a broad range of users, however, limited our choices.
+Software that used OpenGL, or another graphics libraries, would require installation.
+Having an installer and system requirements would be barrier of entry to participating in our study.
+In addition, trying to support multiple platforms would be time intensive and would increase the marginal cost of additional features to OASIS.
+WebGL and ThreeJS are relatively new graphics libraries that are supported on most modern web browsers.
+The availability of WebGL and our requirement of accessibility led me to make OASIS as web-based application.
+Additional benefits of using a web-based application include having a platform independent framework, no installation process, and globally applied updates.
+Having a web-based application lends itself to using a client-server architecture.
+In OASIS I leverage the server to both service our web page and run computationally expensive processes on behalf of clients.
+Namely, these computational expensive processes are the physical sketch interpretation algorithm and the daylight rendering engine.
+Both of these processes computed on a specialized lab machine rather then locally on users' machines.
+Our lab machine, unlike most clients running our application, is equipped with an NVidia GeForce GTX 780 graphics card, 64 GB of RAM, and a 12 core processor.
+I leave user interface related computations on the client, including the manipulation of 2D images, the creation of rendering request for the server, and the visualizing of 3D models.
+% I do not want to opt anyone out of our study
+My hope is that leveraging the server to run the computational expensive components in OASIS will prevent potential participants from opting out of our pilot user study due to hardware limitations and will provide a homogeneous user experience across all platforms.
+
+
+In OASIS I collect two types of data from users.
+Both active and passive data are collected from users while they use our tool.
+Active data refers to the feedback, models, and comments user actively provide.
+Passive data refers to data not actively provided by users, such as the length of time a user spends on a page, the average wait time before rendering request are handled, and other information about users usage of our application. We collect both types of data to get a clearer idea of how users perceive OASIS and how users interact with our tool.
+
+The active feedback data collected from users can be organized as either user-specific questions, model-specific questions, renovation-specific questions, and render-specific questions.
+User-specific questions refer to questions associated with users.
+For example questions pertaining to user's past experience and education.
+User-specific questions also include questions that ask users about their subjective opinion of certain components of OASIS.
+All user-specific questions as well as all feedback questions can be viewed in the appendix. 
+Model-specific questions refer to questions about user created models.
+Model-specific questions include asking users to elaborate on specific models and asking users to rate how confident they are regards to their accuracy of creating models.
+OASIS allows users to make multiple renovations on previously created models.
+Some of the questions I ask are renovation-specific, such as if the physical sketch interpretation algorithm correctly matches users' intentions on a specific renovation of a model.
+Lastly, users can run several renderings per renovation.
+As a result I also ask users renovation-specific questions.
+The relation between users, models, renovations, and renderings can be seen in Figure-\ref{}.
+As mentioned before we also collect passive data.
+Specifically, we collect how long users spend on each page of our interface and how long users wait for both physical sketch interpretations and daylight renderings.
+
+
+
