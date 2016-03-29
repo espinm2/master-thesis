@@ -208,54 +208,57 @@ While the data is strongly indicative that our physical sketch interpretation al
 From Figure-\ref{fig:matching_chart} and the fact that there are 73 models on OASIS, but only fewer responses makes it is clear that participants do not answer this specific feedback question readily.
 In order to better gauge our accuracy, changes to the interface need to be made to persuade participants to answer this feedback question. \\
 
-% Aside from categorical quantitative feedback, we also ask users to % quantitatively describe their overall impressions of the system effectiveness % in construction 3D models from user sketches; 
-% Table-\ref{} displays results from this feedback questions.
-% Of the 16 users that provided feedback on the effectiveness of the physical % sketch interpretation algorithm, 14 stated that the system matched their % intentions.
-% One user stated that they only saw 2D versions of the interpretation.
-% This could be caused from the user either not rotating their model or limited % WebGL support on their web browser.
-% I do  not collect meta data on user web browsers so there currently no % explanation of this.
-% Two users mentioned the absence of support for doors hindered the % effectiveness of generating 3D models.
-% One user linked us an image in their feedback, that displayed a rendering % issue.
-% The detail of some of the qualitative feedback provided from users was much % higher than originally expected.
-% Equally important, we asked users to describe cases where models were % incorrectly interpreted by our physical sketching algorithm.
-% 
-% Table-\ref{} presents the feedback given about these failure cases.
-% Eight users provided feedback on failure cases, however, some feedback % provided prove hard to analyze.
-% Three users when providing feedback make a reference to problems on specific % models.
-% Only one user provided a link to an image of a model they had issue with.
-% I suspect the other two users thought OASIS kept track of which model users % were currently viewing when providing feedback.
-% This particlar feedback question is a general system wide question, so we did % not anticicapte that users would accociate this question with the model % currently being viewed.
-% Additionally, two other responces state there were no issues and another user % misintrpted the question and stated that the lack of lofted beds in the system % was a limiation.
-% Another users stated that the transpernt walls only showed windows when % viewing from certain angles.
-% The user also stated that they noticed the floor of models was no visiable % when viewing a model from underneath the floor.
-% That one specfic concern however, was a design choice I made.
-% I belived that if uses wanted to see into their model from the floor upwards % they could only do if the backside of the floor was rendered as non-visable.
-% Overall, this question showed me that users require some way to link a failure % case rather then  simply describe it.
-% Descriptions of a failure without a model that failed proved to be ambigious % and was unhelpful in  diognosing users' issue.
-% 
-% \section{Daylighting Analysis Feedback}
-% The final set of qualative feedback I collect concerns users experence with % the daylighting portion of our interface.
-% Speifically we ask users if they understood the results of daylight % simulations and to desrvibe anything unclear or confusing.
-% Table-\ref{} contains user feedback about users' understand of simulation % results.
-% Note that the feed back collected in Table-\ref{} was accociated per rendering.
-% I anticipcated that users would understand some simulations results for a % model but not undersnad others.
-% Surpisingly usrers answers did not very from one rendering to another.
-% Out of then user responces 9 responces claimed to understand the simulation % results.
-% One user expected daylight from a north facing window at noon in the norther % hemisphere;
-% There is direct sunlight from northern fenestrtions in the northern hemisphere % and the user obviouslly know this.
-% Users misconceptions about daylight are not in the scope of this thesis, but, % covered in a previous users study on the tangible users interface on the % virtual heliodion\cite{}.
-% Lastly we asked users if they system allowed them to test daylighting % perfoamcnce and if they understood over and under illumination visualizations.
-% Table-\ref{} shows that of 10 users that provided feedback seven were posative % statements.
-% In general users understood over and under illumination and claimed that OASIS % was useful for daylighting preformance and analysis.
-% 
-% This feedback question is user-specific,however, one user provided feedback % that seemed to be associated with a specific rendering.
-% More intrestingly, our most experenced user claimed that they did not see % OASIS was not effective for daylight performance.
-% The user did not understand what under illumiiation was relative to.
-% In OASIS we do not currentlu support adjusting therehsholds for under and over % illumination.
-% Adjusting these thresholds for common activies, such as office work, are left % as future work.
-% 
+Aside from categorical quantitative feedback, we also ask participants to quantitatively describe their overall impressions of the system's effectiveness in construction 3D models from user sketches; 
+Figure-\ref{fig:effective} displays results from this feedback questions.
+Of the 16 participants that provided feedback on the effectiveness of the physical sketch interpretation algorithm, 14 stated that the system generally matched their intentions.
+One participant stated that they only saw 2D versions of the interpretation.
+I presume this could be caused from the user either not rotating their model or limited WebGL support on their web browser.
+I do  not collect meta data on participants' web browsers or cursor movements, so currently there is no explanation of problem encountered by this participant.
+Two participants mentioned the lack of support for doors hindered the effectiveness of generating 3D models.
+One participant linked us an image in their feedback, that displayed a rendering issue they had encountered.
+The detail of some of the qualitative feedback provided from participants was higher than originally expected.
+A take away from participants taking screen shots, hosting images online, and linking images of problem renderings to us is that I would provide an easier means to attribute feedback to models.\\
+\clearpage
+Moreover, we asked users to describe cases where models were incorrectly interpreted by our physical sketching algorithm.
+Figure-\ref{fig:failure} presents participant feedback about these failure cases.
+Eight participants provided feedback on failure cases, however, some feedback provided prove hard to analyze.
+Particularly, three participants provided feedback making references to problems on specific models without images or model titles for us to associate the feedback with.
+Only one participant provided a hyper-link to an image of a model they encountered problems.
+I suspect the other two participants believed OASIS kept track of which model users were viewing when providing feedback.
+This particular feedback question is a general system wide question, so I intentionally did not anticipate that users would associate this question with the model currently being viewed by the participate.
+Additionally, two other responses claim there were no issues in our interpretations of their sketches.
+Furthermore, another participate misinterpreted the question and stated that the lack of lofted beds in the system was a limitation to their design.
+We already made note of a similar request earlier in the previous section and choose not to discuss it here.
+Another participant brought a visualization problem to our attention. 
+Namely, the problem is that transparent windows are only visible from certain viewing from certain angles in our 3D model.
+The same participant also stated that the floor of models was not visible when viewing a model from underneath the floor.
+That concern however, was a design choice intentionally made.
+I believed that if users wanted to see into their model from the floor upwards they could only do if the backside of the floor was no rendered.
+Rendering the backside of floor would make viewing the model from underneath imposable.
 
+In brief, feedback on failure cases demonstrated the importance of linking feedback to models in the system rather then  simply describing those cases through just written feedback.
+Descriptions of a failure cases without reference models proved to be ambiguous and unhelpful in  diagnosing users' issue.
 
+\section{Daylighting Analysis Feedback}
+The final set of qualitative feedback I collect in our pilot user study, concerns participant experience with daylighting in OASIS.
+Specifically we ask participants if they understood the results of daylight simulations and to describe anything they found unclear or confusing about our visualizations.
+Figure-\ref{fig:understood} contains user feedback about participant comprehension of simulation results.
+Note that the feedback collected in Figure-\ref{fig:understood} is associated with a specific rendering.
+I anticipated that users would understand some simulations results for a given rendering but not understand others renderings, so I associated this feedback question with renderings rather than users or models.
+Surprisingly, participants' responses between renderings did not vary. 
+Out of the 10 participant that provided feedback 9 claimed to understand the simulation results.
+One participant expected daylight from a north facing window at noon in the norther hemisphere;
+This participant might not have known that there is no direct sunlight from northern-facing fenestrations in the northern hemisphere.
+Users misconceptions about daylight are not in the scope of this thesis, but, are covered in a previous users study on the tangible users interface on the Virtual Heliodion\cite{}.
+Lastly we asked participants if they system allowed them to both test daylighting performance and understand over and under illumination visualizations.
+Figure-\ref{fig:effective} shows that of 10 participants that provided feedback seven were positive statements.
+In general participants understood over and under illumination and claimed that OASIS was useful for daylighting performance and analysis.
+More interestingly, our most experienced user claimed that they did not see OASIS was not effective for daylight performance.
+The user did not understand what standard under and over illumination was relative to.
+Consequently, OASIS do not currently support adjusting thresholds for under and over illumination.
+Adjusting these thresholds for common actives, such as office work, are left as future work.
+In the course of this pilot user study, the feedback from our participant with over 10 years work experience in architecture was constructive to where we hope to take OASIS as a design tool.
+Similarly, the feedback from the non-experts is invaluable in regards to user interface decisions we are to make a direct result of this study.
 
 
 
