@@ -5,71 +5,86 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{RELATED WORKS} \label{sec:introduction}
 
+% Make a TLDR 
+The online architectural sketching interface for simulations (OASIS) is an alternative interface for key algorithms originally developed for the Virtual Heliodon.
+The Virtual Heliodon is a spatial augmented tangible user interface for daylighting analysis.
+The both Virtual Heliodon and OASIS rely on the physical sketch interpretation algorithm (PSIA) and the daylight rendering engine (DRE). 
+The physical sketch interpretation algorithm (PSIA) is used to convert physical sketches, in the Virtual Heliodon's tangible user interface, to water-tight triangle meshes.
+This triangle mesh is then used a input for the daylight rendering engine (DRE).
+The daylight rendering engine (DRE) is a scalable renderer that uses GPU-accelerated photon mapping to produce daylight visualizations at interactive frame rates.
+Furthermore, while there are many well established architectural tools for daylight analysis in the later stages of the architectural design process, there exist only a handful of tools that are used in the early stages of design.
+We will discuss how both OASIS and the Virtual Heliodon share common goals with some of these more popular daylight analysis tools.
+
 \section{Virtual Heliodon}
 
-	% Figures
-	\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.5\textwidth]{virtual_heliodon}
-	\label{fig:virtual_heliodon}
-	\caption{Overview of the Virtual Heliodon. Note the projector arrangement and circle table at the center.}
-	\end{figure}
 
-	\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.5\textwidth]{heliodon_sketch}
-	\label{fig:heliodon_sketch}
-	\caption{Example physical sketches created by users on the Virtual Heliodon}
-	\end{figure}
-
-	The Virtual Heliodon is a spatial augmented reality with a tangible user interface for the early collaborative design of interior spaces with daylighting\cite{sheng2009virtual, cutler2009inferring,nasman2013physical,nasman2013evaluation,cutler2010interpreting}. 
-	Succinctly, the Virtual Heliodon is composed of multiple projectors, a circular table, and a collection of foam primitives.  
-	A large chassis holds the projectors above the table top at evenly spaced intervals. 
+	The Virtual Heliodon is a spatial augmented reality system with a tangible user interface for the early collaborative design of interior spaces with daylighting\cite{sheng2009virtual, cutler2009inferring,nasman2013physical,nasman2013evaluation,cutler2010interpreting}. 
+	The Virtual Heliodon is composed of multiple projectors, a circular table, and a collection of foam primitives.  
+	A large frame holds the projectors above the table top at evenly spaced intervals. 
 	These projectors all face towards the table top at the center of the system;
 	The configuration of the Virtual Heliodon is shown below in Figure-\ref{fig:virtual_heliodon}
 	This tangible user interface lets users physically engage with wall primitives. 
 	Users can define architectural spaces by moving and rotating wall primitives on the table top.
 	Some architectural spaces created on the Virtual Heliodon are shown in Figure-\ref{fig:heliodon_sketch}.
-	Then a network of computers use the projectors to display daylighting simulation renderings onto the foam primitives placed on the table.
-	In order to project on all wall primitives on the table top multiple projects in varying positions are used.
-	Projecting daylighting rendering directly onto wall primitives creates an augmented reality environment that gives users a sense of immersion\cite{nasman2013evaluation}.
-	The virtual Heliodon has gone through evaluations and has been proven to be engaging and valuable as an educational daylighting tool\cite{nasman2013evaluation}.
+	After the creation of a physical sketch, a network of computers use projectors to superimpose daylight renderings onto the foam primitives placed on the table.
+	The Virtual Heliodon requires multiple projectors in varying positions along the frame to superimpose renderings onto all of the wall primitives.
+	Projecting daylight rendering directly onto wall primitives creates an augmented reality environment that gives users a sense of immersion\cite{nasman2013evaluation}.
+	The Virtual Heliodon has gone through a few evaluations and has been shown to be engaging and valuable as an educational daylighting tool\cite{nasman2013evaluation}.
+
+	% Figures
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{virtual_heliodon}
+	\caption{Overview of the Virtual Heliodon. Note the projector arrangement and circle table at the center.}
+	\label{fig:virtual_heliodon}
+	\end{figure}
+
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{heliodon_sketch}
+	\caption{Example physical sketches created by users on the Virtual Heliodon}
+	\label{fig:heliodon_sketch}
+	\end{figure}
 
 \section{Physical Sketch Interpretation Algorithm}
 
-	Cutler et al. conducted evaluations on the effectiveness of physical sketch interpretation algorithm used in the Virtual Heliodon\cite{cutler2009inferring}.
-	This studies compared user's intended interpretation of the physical sketches to both the algorithm's interpretation and other user's interpretation.
-	In brief the study concluded that on average the physical sketch interpretation algorithm matched users intended interpretation 78\% of the time given non-ambiguous models\cite{cutler2009inferring}.
-	Aside from ambiguous sketches, the Virtual Heliodon provided reliable 3D geometries that matched user's intended floor plan designs.
+	A previous study evaluated the effectiveness of the physical sketch interpretation algorithm (PSIA) used in the Virtual Heliodon\cite{cutler2009inferring}.
+	This study compared users' intended interpretation of physical sketches to both the
+	interpretation from the PSIA and human subjects.
+	In brief, the study concluded that on average the PSIA matched users intended interpretation 78\% of the time given non-ambiguous models\cite{cutler2009inferring}.
+	Aside from ambiguous sketches, the Virtual Heliodon provided reliable 3D geometries that matched users' intended floor plan designs.
 	OASIS uses the same physical sketching interpretation algorithm employed in the Virtual Heliodon.\\
 
 	Interpreting sketches is not the only method of turning concepts into 3D models.
 	Traditionally, both parametric and geometric modeling are used to create 3D models of architectural spaces.
-	Daylighting analysis tools such as Home Energy Efficient Design tool(HEED) and eQuest use parametric modeling to generate 3D models of an architectural space\cite{hirsch2010equest,milne2001drag}.
-	Parametric modeling is the creation of model from a template by specifying the parametric such as wall lengths, walls heights, and window positions through numerical entry.
+	Daylighting analysis tools such as the Home Energy Efficient Design tool (HEED) and eQuest use parametric modeling to generate 3D models of an architectural space\cite{hirsch2010equest,milne2001drag}.
+	Parametric modeling is the creation of a model from a template by specifying parameters such as wall lengths, walls heights, and window positions through numerical entry.
 	Both HEED and eQuest are intended for use in the schematic design phase and offer a large variety of energy analysis measures.
 	Due to the high cost of effort in parametrically designing an architectural space, both HEED and eQUEST feature wizards to guide users through the process. 
-	Geometric modeling is another modeling approach used by many architectural modeling software.
-	SketchUp and AutoDesk are both popular architectural design tools that use geometric modeling for the generation of architectural spaces. 
-	Geometric modeling gives users the ability to create 3D objects by modifying basic shapes visually; This modeling approach is similar to modeling with clay.
-	The process of imagining a space and geometrically modelings that space in software is non-trivial.
-	Being able to geometrically model complex 3D geometries is an art that requires precision and a deep understanding of the geometric tools available.
-	As a result, the modeling of architectural designs in software is usually pushed back into the design development phase when fewer iterations a design are required\cite{Galasiu}.\\
+	Specifically, HEED allows users to ``draw'' the floor plan of a building by filling in 2D square grid. Filled in portions of the grid are used to define the floor plan of a building. The main disadvantage of this interface the limitation of only supporting axis aligned models. 
+	Additionally, the interface on eQUEST only allows users to pick from a small set of template models including rectangular models, L shaped models, and U shaped models.\\
 
-	In practice, manual sketches are still used during the early design phase, because of the speed \& efficiently sketching offers designers\cite{Galasiu}.
-	As a result researcher has been done on architectural sketching interfaces.
-	LightSketch and the VR SketchPad project both incorporate architectural sketches into the early design phase\cite{do2001vr,glaser2003sketch}.
+	On a related note, geometric modeling is another 3D modeling approach commonly used to create complex architectural designs in software.
+	Geometric modeling gives users the ability to create 3D objects by modifying basic shapes visually.
+	The process of geometrically modeling a conceived architectural space in software is non-trivial.
+	Being able to geometrically model complex 3D geometries is an art that requires precision and a deep understanding of the geometric tools available.
+	As a result, the modeling of architectural designs in software is usually pushed back into the design development phase, where there are fewer large scale changes in design\cite{Galasiu}.
+	SketchUp and AutoDesk are both popular architectural design tools that use geometric modeling for the generation of architectural spaces. \\
+
+	In practice, sketching still used during the early design of architecture because of the speed \& efficiently it offers designers\cite{Galasiu}.
+	Due to sketching's speed and flexibility, a few architectural sketching interfaces were developed.
+	LightSketch and the VR SketchPad project both use an architectural sketching interface\cite{do2001vr,glaser2003sketch}.
 	Specifically, LightSketch shares much in common with OASIS.
-	LightSketch gives users the ability to to draw walls, windows, and interior lighting elements to define architectural spaces\cite{glaser2003sketch}; The drawings are interpreted and turned into 3D models.
-	Users can then perform daylighting analysis and generate renderings from generated 3D models.
+	LightSketch gives users the ability to to draw walls, windows, and interior lighting elements to define architectural spaces\cite{glaser2003sketch}; The drawings are then interpreted and turned into 3D models.
+	Users can then perform daylighting analysis and generate renderings from those 3D models.
 	LightSketch, however, is limited to shoe-box geometries for rooms.
-	Users cannot freely design a wide variety of non shoe-box of floor plans as is possible in the VR SketchPad project and the Virtual Heliodon.
+	Users cannot freely design a wide variety of non shoe-box floor plans, as is possible in the VR SketchPad project and the Virtual Heliodon.
 	The VR SketchPad project supports the creation of 3D models of a wide variety of architectural spaces\cite{do2001vr}.
 	Furthermore the VR Sketchpad was available as an online tool, similar to OASIS.
 	The VR SketchPad project however does not distinguish between interior and exterior spaces but instead just renders objects where users sketch them.
 	Sketches in the Virtual Heliodon get converted into water-tight models that are required for daylighting simulations.\\
 
-\section{Daylighting Render LSVO}
+\section{Daylight Rendering Engine}
 
 	In addition to using the Virtual Heliodon's physical sketch interpretation algorithm, I use the Virtual Heliodon's GPU photon mapping rendering engine\cite{li2011photon,nasman2013physical}. 
 	This rendering engine is specialized to provide viewpoint independent daylight renderings at interactive rates.
