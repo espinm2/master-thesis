@@ -79,7 +79,7 @@ All things considered, the motives that drive architects and building owners to 
     Using daylight as an alternative or supplement to electrical lighting requires daylight management. Automatic daylight management consist of dimming systems that control the intensity of electrical lighting during peak hours when daylight is most readily available.  Some simulation results show that in the absence of daylight management power consumption from lighting can exceed 50\% of a building's total power demand.
     However, those simulations also show that daylight can reduce up to 18\% to 55\% of a building's heating and lighting demand\cite{Bodart}.
     Without a dimming system, the interval of time in which daylighting is cost effective is significantly reduced. Other simulation results showed energy savings of 60\% with daylighting coupled with automatic dimming control strategies\cite{Ihm}. 
-    A major disadvantage of automated dimming systems is the lack of control of illumination and it's distribution. It is impossible to satisfy all occupants' personal illumination preference, as a result automatic dimming systems attempt to a meet generalized lighting requirement for a given space. This generalization might satisfy some occupants, but leave others uncomfortable.\\ 
+    A major disadvantage of automated dimming systems is the lack of control of illumination and it's distribution. It is impossible to satisfy all occupants' personal illumination preference\cite{galasiu2006occupant}, as a result automatic dimming systems attempt to a meet generalized lighting requirement for a given space. This generalization might satisfy some occupants, but leave others uncomfortable.\\ 
 
     Also, dimming lights result in reduced thermal output from lighting fixtures\footnote{Thermal radiation produced from incandescent lighting generates significant amounts of heat, however, florescent and LED lighting are more efficient and do not produce comparable thermal output}. 
     Which in turn reduces the total cooling load required in space. The reduced cooling load also contributes to energy saving in daylighting systems\cite{Leslie}. 
@@ -187,7 +187,7 @@ All things considered, the motives that drive architects and building owners to 
     During clear days, direct sunlight can enter a room and cause over illumination and glare.
     However during cloudy days, sunlight is diffused by clouds resulting in diffuse daylight.
     Weather conditions also vary by location, for example in upstate New York, cloudy skies are common, however in Florida clear skies are more frequent.
-    % ASK_BARB: I think solar insolation means something else...
+    % ASK_BARB: I think solar isolation means something else...
     A daylighting systems would be more efficient in locations with clearer skies then in locations where clear skies are uncommon.\\
 
     In brief, daylight varies depending on temporal factors, room-specific design choices, and building-wide decisions. These numerous factors make the distribution of daylight in a architectural space non-trivial to predict. 
@@ -195,58 +195,68 @@ All things considered, the motives that drive architects and building owners to 
 
   \subsection{Adverse Daylighting Effects}
 
-    As previously discussed, daylighting systems offer occupants a variety of benefits. However, poorly implemented daylighting systems can result in discomfort to occupants and increases in a building's energy demand.
+    As previously discussed, daylighting systems offer occupants a variety of benefits. However, poorly implemented daylighting systems can result in discomfort to occupants and increases in energy demand.
 
     \paragraph{Occupant Discomfort}
 
     % Over and under illumination
     Human vision can be understood and compared to an image processing systems.
     We require strong contrast and ample illumination to be able to clearly view and process symbols.
-    The performance of visual task, such as reading, varies depending on the illumination provided and clarity of the font.
+    The performance of visual task, such as reading, varies depending on the illumination and the clarity of the symbols being read.
     Under-illumination can make reading difficult and reduce worker productivity\cite{boyce}.
-    Under illumination can occur in daylighting systems when daylight available is below a threshold to perform a specific visual task.
-    The Occupational Safety and Health Administration (OSHA) set mandatory minimums on illuminations for common settings including offices, hallways, and warehouses to name a few.
-    Offices for example require a minimum of 322 lux.
+    Moreover, under illumination can occur in daylighting systems when daylight available is below a threshold to perform a specific visual task.
+    The Occupational Safety and Health Administration (OSHA) set mandatory minimums on illuminations for common environments including offices, hallways, and warehouses to name a few;
+    offices for example require a minimum of 322 lux.
     % Extension: Add in how we compute lux
-    Similarly, hallways and warehouses have lower minimums set because there is no need to focus on fine details\cite{OSHA}. \\
+    Similarly, hallways and warehouses have lower minimums set because there is no need to focus on fine details for prolonged periods of time\cite{OSHA}. \\
 
     Another visual discomfort that can occur from poor daylighting is glare.
     Glare is a reduction of contrast due a disproportionate amount of illumination from glare sources compared to illumination on a visual task.
     % Introduce the glare index
-    Glare is hard to account for in the early design stages of architecture because glare is dependent on not only sources of illumination but also on viewpoint.
-    Specifically, there are two main forms of glare -- disability glare and discomfort glare.\cite{Robbins}
+    Glare is hard to account for in the early design stages of architecture because glare is not only dependent on the source of illumination but also on viewpoint.
+    Specifically, there are two main forms of glare -- disability glare and discomfort glare\cite{Robbins}.
     Disability glare occurs when a glare source is intense enough that it rendered the viewer momentary blind. 
     This kind of glare commonly occurs when driving at night and cars are passing in the opposite lane. 
     The strong light emitted from headlights would reduce the contrast of the road ahead and might result in momentary blindness.
     %
     Likewise, discomfort glare is similar to disability glare but much less dangerous. 
-    Discomfort glare is also caused from bright glare sources, such as the Sun or light reflected from the Sun, that making visual task difficult to perform.
+    Discomfort glare is also caused from bright glare sources, such as the sun or light reflected from the sun.
     Unlike disability glare, discomfort glare does not cause momentary blindness.  
-    Prolonged exposure to discomfort glare when focusing on a visual task,however, significantly reduces both worker productivity and worker satisfaction\cite{boyce}. 
+    However prolonged exposure to discomfort glare when focusing on a visual task can significantly reduces both worker productivity and worker satisfaction\cite{boyce}. 
     Another visual discomfort, common in office environments, includes veiled reflection.
     Veiled reflections are the result of light reflecting off a surface directly into the eyes of the viewer. 
     For example reading an article from a glossy magazine in direct sunlight is challenging because at certain viewpoints the gloss on the page reflects light into your eyes reducing the contrast between both the black and white letters. 
     Veiled reflections, like glare, are difficult to predict because they are viewpoint dependent. \\
 
     Lastly, occupants sitting near windows can experience thermal discomfort at certain times of day.
-    Daylight can be useful in warming up a space during the winter, however can also cause discomfort during the summer.
-    Not only does unattained solar heat gain cause occupants discomfort, solar heat gain can also discomforts building owners.
+    Daylight can be useful in warming up a space during the winter; however, daylight can also cause discomfort during the summer. \\
+
+    Overall, there are various ways daylight can have adverse effects on occupant's comfort. As a result architects invest significant time and effort in daylighting analysis to prevent occupants from experiencing these adverse effects.
+    Not only can occupants experience discomfort, but building owners can suffer economic loss from improperly created daylighting systems.
 
     \paragraph{Economic Loss}
     
     Another possible adverse product of daylighting systems is unintended solar heat gain. Solar heat gain is the increase in temperature inside a space due to daylight. 
-    If too many windows are installed in particular location, a room can experience unintended solar gains.
-    To counter solar heat gain, cooling system must work at a higher load then usual resulting in increased energy usage.
-    Furthermore, windows unless insulated well can result in heat loss during the winter.
-    Rooms with many windows might let in a lot of daylight, but might also come at the cost of increased heating cost during the winter months.\\
+    If too many windows are installed in particular location, a room can experience unintended solar gain.
+    To counter solar heat gain, cooling systems must work at higher loads then usual resulting in increased energy usage.
+    Furthermore, windows unless insulated well can result in heat loss during the winter seasons and nights.
+    There several strategies architects can use to mitigate heat loss during the night.
+    For example using thick drapes, shades, and shutters can provide layers of insulation to keep warm air inside from direct contact with the colder window.
+    Additionally, there are specialized window glazing available the can help reduce heat loss during the winter and night.
+    Ultimately, rooms with many windows might provide ample daylight during the daytime but carry the risk of significant heat loss during chilly nights and the winter months.
+    \\
 
-    Lastly, occupant behavior can result in lose of investment capital for building owners.
-    Occupants exposed to the visual discomforts of daylight can choose use window blinds to block daylight out entirely.
-    If blinds are lowered then electrical lighting is used in place of daylight.
-    The use of electrical lighting, given available daylight, results in reduced energy savings for the building owners.
+    Lastly, occupant behavior can result in the lost of investment capital for building owners.
+    Occupants exposed to the visual discomforts of daylight can choose to use window blinds to block daylight out entirely and rely solely on electrical lighting.
+    The use of electrical lighting, given available daylight, results in reduced energy savings for building owners.
+    As mentioned previously, daylighting coupled with automated dimming systems can help prevent occupants from the visual discomforts of over illumination.
+    However, having no control over automated dimming systems can cause occupants discomfort and result in coup d'\'{e}tat in which occupants only rely on electrical lighting.%there is no source, but it's too good to leave out.. 
+    \\
+
     Moreover, daylighting systems are expensive to design and implement and as a result the initial cost is generally greater then using traditional electrical lighting.
     If occupants continuously choose electrical lighting over daylight, the break even point of the initial investment in a daylighting system is pushed back further -- essentially costing the building owner capital.
     Architects are then faced with the challenge of not only making visually pleasing lighting conditions, but also avoiding discomforts caused by daylight.
+
 
 % This section needs to be written
 \section{Daylighting In The Architectural Design Processes}
