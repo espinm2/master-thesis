@@ -78,27 +78,30 @@ All things considered, the motives that drive architects and building owners to 
 
     Using daylight as an alternative or supplement to electrical lighting requires daylight management. Automatic daylight management consist of dimming systems that control the intensity of electrical lighting during peak hours when daylight is most readily available.  Some simulation results show that in the absence of daylight management power consumption from lighting can exceed 50\% of a building's total power demand.
     However, those simulations also show that daylight can reduce up to 18\% to 55\% of a building's heating and lighting demand\cite{Bodart}.
-    Without a dimming system, the interval of time in which daylighting is cost effective is significantly reduced. Other simulation results showed energy savings of 60\% with daylighting coupled with automatic dimming control strategies\cite{Ihm}. \\
+    Without a dimming system, the interval of time in which daylighting is cost effective is significantly reduced. Other simulation results showed energy savings of 60\% with daylighting coupled with automatic dimming control strategies\cite{Ihm}. 
+    A major disadvantage of automated dimming systems is the lack of control of illumination and it's distribution. It is impossible to satisfy all occupants' personal illumination preference, as a result automatic dimming systems attempt to a meet generalized lighting requirement for a given space. This generalization might satisfy some occupants, but leave others uncomfortable.\\ 
 
     Also, dimming lights result in reduced thermal output from lighting fixtures\footnote{Thermal radiation produced from incandescent lighting generates significant amounts of heat, however, florescent and LED lighting are more efficient and do not produce comparable thermal output}. 
     Which in turn reduces the total cooling load required in space. The reduced cooling load also contributes to energy saving in daylighting systems\cite{Leslie}. 
     In addition to reducing the cooling load, daylighting can also be used for intentional solar heat gain during the winter, while preventing unintentional solar heat gain during the summer.
-    Daylighting systems exploit the shallow sun angle in the winter season by using roof overhangs that let direct sunlight into a building during the winter months and blocking direct sunlight during the summer months. Heating a large space during the winter is expensive, and leveraging solar heat gain can aid in keeping heating cost down\cite{Bodart}. \\
+    Daylighting systems exploit the shallow sun angle in the winter season by using roof overhangs that let direct sunlight into a building during the winter months and blocking direct sunlight during the summer months. Heating a large space during the winter is expensive, and leveraging solar heat gain can aid in keeping heating cost down\cite{Bodart}. 
+    Figure-\ref{fig:summer_winter}B illustrates how roof overhangs can be used to accomplish this common daylight energy saving technique.
+    \\
 
-% This requires some work
+% This requires some work r1
 \section{Challenges Of Designing Daylighting Systems}
   
   % Unsure of apostrophe in "outnumbers design' affect"
-  Daylight has many benefits over traditional electrical lighting, however,reaping those benefits is not effortless. There are many factors architects have to consider when designing a daylighting system. Choices made during the early stages of design can have extensive impact on the effectiveness of a daylighting system. Likewise, design choices can also result in visual discomforts for occupants and economic loss for building owners. By and large, architects planning daylighting systems are required to analyze numerous designs' affect on daylight. Furthermore, architects have to be cautious of sunlight's dangers to both occupants and building owners.
+  Daylight has many benefits over traditional electrical lighting, however,reaping those benefits is not effortless. There are many factors architects have to consider when designing a daylighting system. Choices made during the early design stage can have extensive impact on the effectiveness of a daylighting system. Likewise, design choices can also result in visual discomforts for occupants and economic loss for building owners. By and large, architects planning daylighting systems are required to analyze numerous designs' affect on daylight. Furthermore, architects have to be cautious of sunlight's dangers to both occupants and building owners.
 
   \subsection{Factors That Affect Daylighting}
 
     % [Introduction]
     Illumination of an architectural space via daylight is dependent on numerous factors including building-wide design choices, room-specific choices, and temporal variations.
-    These factors make it difficult to access the quality of a design in terms of daylighting.\\
+    These factors make it difficult to assess the quality of a design in terms of daylighting.\\
 
     \paragraph{Building-wide Design Choices} 
-    The cardinal orientation of a building is a choice that directly affect how daylight will illuminate architectural spaces. In the northern hemisphere, windows facing the south cardinal direction experience direct daylight throughout the day. On the other hand, north facing windows do not experience this effect. Rather north facing windows experience indirect diffuse illumination from the sky. The opposite is true in the southern hemisphere. In the south, north facing windows experience direct daylight and south facing windows experience diffuse indirect light. Likewise, windows facing east experience morning sunlight and windows facing west experience evening sunlight. Variations in eastward and westward lighting are a result the sun's eastwards to westwards path across the sky\cite{Robbins}. See Figure~\ref{fig:north_south} for an illustration.
+    The cardinal orientation of a building is a choice that directly affects how daylight will illuminate architectural spaces. In the northern hemisphere, windows facing the south cardinal direction experience both direct sunlight and indirect skylight throughout the day. On the other hand, north facing windows do not experience only diffuse skylight. The opposite is true in the southern hemisphere. In the south, north facing windows experience both direct daylight and skylight and south facing windows experience only diffuse skylight. Likewise, windows facing east experience direct morning sunlight and windows facing west experience direct evening sunlight. The temporal variations in eastward and westward direct sunlight are due to the sun's westwards path across the sky\cite{Robbins}. See Figure-\ref{fig:north_south} for an illustration.
 
     \begin{figure}[h]
       \centering
@@ -108,7 +111,6 @@ All things considered, the motives that drive architects and building owners to 
     \end{figure}
 
     Aside from building orientation, building elevation can affect daylighting as well. Varying building elevation can change how daylight illuminates an architectural space. For example, a building located well above sea level will experience a slight difference in daylighting compared to a building below sea level. Daylight usually enters a space either perpendicular to a flat window pane or at a downwards angle starting from the Sun and ending at the floor and walls. However, a skyscraper could potentially have daylight enter a space at an upwards angle towards the ceiling due to its increased elevation.\\
-
 
     \begin{figure}[h]
       \centering
@@ -124,24 +126,30 @@ All things considered, the motives that drive architects and building owners to 
     A = cos^{-1}( \frac{sin(\delta) cos(\phi) - cos(\delta) sin(\phi) cos(HRA)}{cos(E)})
     \end{equation}
 
-    Just as important as building orientation and elevation, where a building is geographically built has direct impact on daylighting.
+    Equally important, the location of where a building is geographically built has direct impact on daylighting.
     Specifically, the path the sun travels across the sky varies with geographic location and time. 
     Equation-\ref{eq:elevation} and equation-\ref{eq:azimuth} are commonly used in daylighting to calculate the sun's position in the sky. 
-    The elevation angle, given by Equation-\ref{eq:elevation}, is the angle between the horizon and solar zenith, as illustrated in Figure~\ref{fig:sun_position}. 
+    The elevation angle, given by Equation-\ref{eq:elevation}, is the angle between the horizon and solar zenith, as illustrated in Figure-\ref{fig:sun_position}. 
     $\delta$ in  equation-\ref{eq:elevation} and equation-\ref{eq:azimuth} refers to the solar declination angle. 
     Lastly, $\phi$ is the latitude of interest in both equations and $HRA$ is the hour angle in local solar time.
-    The azimuth angle, as shown in Figure-\ref{fig:sun_position}, is the angle between the cardinal north direction and the direction the sun projected down towards the horizon. The azimuth can be found once the elevation angle has been found, as show in equation-\ref{eq:azimuth}.
-    As shown in both equations, the suns position in the sky is relative to longitude, latitude, and temporal variables.\\
+    The azimuth angle, as shown in Figure-\ref{fig:sun_position}, is the angle between the cardinal north direction and the direction projected sun from the horizon. The azimuth can be calculated once the elevation angle has been found, as show in equation-\ref{eq:azimuth}.
+    As shown in both equations, the suns position in the sky is relative to longitude, latitude, and temporal variables.
+    Similarly, surrounding vegetation and buildings can have influence of daylight in an architectural space. 
+    For example, adjacent building can either occlude or reflect direct daylight into an architectural space, depending on the location and reflective proprieties of the nearby building. 
+    Moreover, adjacent buildings not only occlude direct sunlight but also block access to skylight.
+    The occlusion skylight can greatly reduce the amount of daylight available for use in architectural space.
+    The same is true for vegetation. Trees, and similar vegetation, can be used to provide shade and diffuse harsh direct sunlight.
+    \\
 
     % [Building design decisions]
     \paragraph{Room-specific Design Choices} 
 
     Room-specific design choices also have an impact on the daylight.
     The geometry of an interior space directly affects the distribution of daylight in a room.
-    Geometries can be designed to diffuse direct lighting for uniform illumination and occupant comfort.
+    Geometries can be designed to diffuse direct lighting for uniform illumination and occupant comfort, as illustrated in Figure-\ref{geometry_sketch}.
     Similarly, shading devices and material properties of interior objects can affect daylighting.
     Shading devices, such as blinds can not only help diffuse direct lighting but also help redirect lighting up towards the ceiling, where it can be diffusely reflected back down towards occupants.
-    Also, a careful selection of both the color and the material of interior items such furniture, walls, and ceiling can affect daylight's distribution in an interior space. 
+    Also, a careful selection of both the color and the material of interior items such furniture, walls, and ceiling can affect the distribution of daylight in an interior space. 
 
     \begin{figure}[h]
       \centering
@@ -151,20 +159,21 @@ All things considered, the motives that drive architects and building owners to 
     \end{figure}
 
     In addition to material and shading devices, window placement and size directly influence daylighting.
-    Larger windows and skylights allow more light to enter a space, however, poses the risk of over-illumination and glare for occupants inside.
+    Larger windows and skylights allow more light to enter a space; however, these windows pose the risk of over-illumination and glare for occupants inside.
     Likewise, the glazing material used to treat windows can also be used to control the amount and distribution of daylight entering a space.
     The glass used in commercial buildings are glazed to block a significant portion of light from entering a space.
     Glazing are used because direct sunlight would cause over-illumination, thermal discomfort, and harm to the occupants situated near windows.
     Special glazing can also be used to help diffuse lighting up towards the ceiling and away from occupants.
-    The choices that architects make in room-specific design significantly affect the daylighting.\\
+    The choices that architects make in room-specific design significantly affect daylighting.\\
 
     % [Temporally]
     \paragraph{Temporal Variation} 
 
-    It is obvious that daylight varies from sun raise to sun set.
+    It is obvious that daylight varies from sunrise to sunset.
     Less obviously, daylight also varies throughout the year.
-    The Sun's position in the sky is shallower during winter season than in the summer season. 
-    Due to this, during the winter months daylight enters a room at a shallower angle allowing light to travel deeper than in the summer months.
+    The sun's position in the sky is shallower during winter season than in the summer season. 
+    Due to this, during the winter months daylight enters a room at a shallower angle, allowing light to travel deeper than in the summer months.
+    Figure-\ref{fig:summer_winter}A illustrates the difference in light penetration during the winter and summer months.
 
     \begin{figure}[h]
     \centering
@@ -173,12 +182,12 @@ All things considered, the motives that drive architects and building owners to 
     \label{fig:summer_winter}
     \end{figure}
 
-    Architects interested in sustainability, exploit this by extending the roof thus allowing daylight to enter during the winter and blocking direct daylight during the summer as shown in Figure-\ref{fig:summer_winter}.
+    As stated previously architects interested in sustainability, exploit this by extending the roof thus allowing daylight to enter during the winter and blocking direct daylight during the summer as shown in Figure-\ref{fig:summer_winter}B.
     Weather conditions also play an important role in the distribution and intensity of daylight. 
     During clear days, direct sunlight can enter a room and cause over illumination and glare.
-    However during cloudy days, sunlight is diffused by clouds resulting in daylight that is more uniform and diffuse.
+    However during cloudy days, sunlight is diffused by clouds resulting in diffuse daylight.
     Weather conditions also vary by location, for example in upstate New York, cloudy skies are common, however in Florida clear skies are more frequent.
-    A Daylighting systems would be more efficient in locations with clearer skies then in locations where clear skies are uncommon.\\
+    A daylighting systems would be more efficient in locations with clearer skies then in locations where clear skies are uncommon.\\
 
     Overall, daylight varies due to many factors. It varies depending on temporal factors, room-specific design choices, and building-wide decisions. These numerous factors make the distribution of daylight in a architectural space non-trivial to predict. 
     These difficulties pose a real challenge in the designing of effective daylighting systems.
