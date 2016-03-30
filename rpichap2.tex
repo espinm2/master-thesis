@@ -71,25 +71,28 @@ We will discuss how both OASIS and the Virtual Heliodon share common goals with 
 	As a result, the modeling of architectural designs in software is usually pushed back into the design development phase, where there are fewer large scale changes in design\cite{Galasiu}.
 	SketchUp and AutoDesk are both popular architectural design tools that use geometric modeling for the generation of architectural spaces. \\
 
-	In practice, sketching still used during the early design of architecture because of the speed \& efficiently it offers designers\cite{Galasiu}.
-	Due to sketching's speed and flexibility, a few architectural sketching interfaces were developed.
+	In practice, sketching is still used during the early design phase of architecture because of the unmatched speed \& efficiently it offers designers\cite{Galasiu}.
+	Architectural sketching interfaces were developed as an alternative to parametric and geometric modeling.
 	LightSketch and the VR SketchPad project both use an architectural sketching interface\cite{do2001vr,glaser2003sketch}.
 	Specifically, LightSketch shares much in common with OASIS.
-	LightSketch gives users the ability to to draw walls, windows, and interior lighting elements to define architectural spaces\cite{glaser2003sketch}; The drawings are then interpreted and turned into 3D models.
-	Users can then perform daylighting analysis and generate renderings from those 3D models.
-	LightSketch, however, is limited to shoe-box geometries for rooms.
-	Users cannot freely design a wide variety of non shoe-box floor plans, as is possible in the VR SketchPad project and the Virtual Heliodon.
-	The VR SketchPad project supports the creation of 3D models of a wide variety of architectural spaces\cite{do2001vr}.
-	Furthermore the VR Sketchpad was available as an online tool, similar to OASIS.
-	The VR SketchPad project however does not distinguish between interior and exterior spaces but instead just renders objects where users sketch them.
-	Sketches in the Virtual Heliodon get converted into water-tight models that are required for daylighting simulations.\\
+	LightSketch gives users the ability to draw walls, windows, and interior lighting elements in order to create 3D architectural spaces\cite{glaser2003sketch}; 
+	the 2D drawings are then interpreted and turned into 3D models through different methods than the PSIA used in OASIS.
+	Users can then perform daylight analysis and generate renderings from those 3D models.
+	LightSketch, however, is limited to shoe-box\footnote{Shoe-box is a term used to generalize rooms that are rectangular prisms in shape.} geometries.
+	Users cannot freely design non shoe-box floor plans, as is possible in the VR SketchPad project and the Virtual Heliodon.
+	The VR SketchPad project supports the creation of a wide variety of 3D models for early visualization and exploration of designed spaces.\cite{do2001vr}.
+	Also, VR SketchPad project was available as an online tool, similar to OASIS.
+	The tool also supported a vocabulary of furniture item sketches.
+	Users could draw furniture items into the scene using this vocabulary and the VR SketchPad project would interpret the furniture drawings to choose the appropriate 3D furniture models to place into the scene.
+	A limitation of 3D models generated from the VR SketchPad project is that the models are only extrapolated from drawn sketches and as a result cannot be used for simulations.
+	Explicitly, the VR SketchPad project does not distinguish between interior and exterior spaces in a design but instead generates objects only where users sketch them.
+	Sketches in the Virtual Heliodon and OASIS get converted into water-tight models that are required for daylighting simulations.\\
 
 \section{Daylight Rendering Engine}
-
-	In addition to using the Virtual Heliodon's physical sketch interpretation algorithm, I use the Virtual Heliodon's GPU photon mapping rendering engine\cite{li2011photon,nasman2013physical}. 
-	This rendering engine is specialized to provide viewpoint independent daylight renderings at interactive rates.
+	In addition to using the Virtual Heliodon's physical sketch interpretation algorithm, I also use the Virtual Heliodon's daylight rendering engine\cite{li2011photon,nasman2013physical}. 
 	The Virtual Heliodon's rendering engine takes advantage of NVidia's Optix GPU ray tracing framework for the parallelization of photon mapping\cite{parker2010optix}.
-	Concisely, photon mapping is the approximation of global illumination by tracing rays outward from emitters and then gathering photons after several bounces to calculate indirect illumination per triangle or patch\cite{hachisuka2008progressive}.
+	This rendering engine is specialized to provide viewpoint independent daylight renderings at interactive rates.
+	Photon mapping is the approximation of global illumination by tracing rays outward from emitters and then gathering photons after several bounces to calculate indirect illumination per triangle or patch\cite{hachisuka2008progressive}.
 	When photons leave emitters their position and direction are chosen at random, however, a photon's intensity is a function of its direction as defined by the International Commission on Illumination's sky models\cite{de1994spatial}. 
 	Other daylighting renderer, such as Radiance require more time to produce clear and noise-free results\cite{compagnon1997radiance}. 
 	However, Radiance is validated and a result Radiance is widely used as a back-end component to several daylighting tools\cite{reinhart2006development, Galasiu}.
