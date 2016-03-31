@@ -8,10 +8,10 @@
 % Make a TLDR 
 The online architectural sketching interface for simulations (OASIS) is an alternative interface for key algorithms originally developed for the Virtual Heliodon.
 The Virtual Heliodon is a spatial augmented tangible user interface for daylighting analysis.
-The both Virtual Heliodon and OASIS rely on the physical sketch interpretation algorithm (PSIA) and the daylight rendering engine (DRE). 
-The physical sketch interpretation algorithm (PSIA) is used to convert physical sketches, in the Virtual Heliodon's tangible user interface, to water-tight triangle meshes.
-This triangle mesh is then used a input for the daylight rendering engine (DRE).
-The daylight rendering engine (DRE) is a scalable renderer that uses GPU-accelerated photon mapping to produce daylight visualizations at interactive frame rates.
+The both Virtual Heliodon and OASIS rely on the physical sketch interpretation algorithm and the daylight rendering engine. 
+The physical sketch interpretation algorithm is used to convert physical sketches, in the Virtual Heliodon's tangible user interface, to water-tight triangle meshes.
+This triangle mesh is then used a input for the daylight rendering engine.
+The daylight rendering engine is a scalable renderer that uses GPU-accelerated photon mapping to produce daylight visualizations at interactive frame rates.
 Furthermore, while there are many well established architectural tools for daylight analysis in the later stages of the architectural design process, there exist only a handful of tools that are used in the early stages of design.
 We will discuss how both OASIS and the Virtual Heliodon share common goals with some of these more popular daylight analysis tools.
 
@@ -48,10 +48,10 @@ We will discuss how both OASIS and the Virtual Heliodon share common goals with 
 
 \section{Physical Sketch Interpretation Algorithm}
 
-	A previous study evaluated the effectiveness of the physical sketch interpretation algorithm (PSIA) used in the Virtual Heliodon\cite{cutler2009inferring}.
+	A previous study evaluated the effectiveness of the physical sketch interpretation algorithm used in the Virtual Heliodon\cite{cutler2009inferring}.
 	This study compared users' intended interpretation of physical sketches to both the
-	interpretation from the PSIA and human subjects.
-	In brief, the study concluded that on average the PSIA matched users intended interpretation 78\% of the time given non-ambiguous models\cite{cutler2009inferring}.
+	interpretation from the physical sketch interpretation algorithm and human subjects.
+	In brief, the study concluded that on average the physical sketch interpretation algorithm matched users intended interpretation 78\% of the time given non-ambiguous models\cite{cutler2009inferring}.
 	Aside from ambiguous sketches, the Virtual Heliodon provided reliable 3D geometries that matched users' intended floor plan designs.
 	OASIS uses the same physical sketching interpretation algorithm employed in the Virtual Heliodon.\\
 
@@ -76,7 +76,7 @@ We will discuss how both OASIS and the Virtual Heliodon share common goals with 
 	LightSketch and the VR SketchPad project both use an architectural sketching interface\cite{do2001vr,glaser2003sketch}.
 	Specifically, LightSketch shares much in common with OASIS.
 	LightSketch gives users the ability to draw walls, windows, and interior lighting elements in order to create 3D architectural spaces\cite{glaser2003sketch}; 
-	the 2D drawings are then interpreted and turned into 3D models through different methods than the PSIA used in OASIS.
+	the 2D drawings are then interpreted and turned into 3D models through different methods than the physical sketch interpretation algorithm used in OASIS.
 	Users can then perform daylight analysis and generate renderings from those 3D models.
 	LightSketch, however, is limited to shoe-box\footnote{Shoe-box is a term used to generalize rooms that are rectangular prisms in shape.} geometries.
 	Users cannot freely design non shoe-box floor plans, as is possible in the VR SketchPad project and the Virtual Heliodon.
@@ -172,11 +172,12 @@ We will discuss how both OASIS and the Virtual Heliodon share common goals with 
 	
 \section{Chapter Summary}
 
-The online architectural sketching interface for simulations (OASIS) is an alternative interface for key algorithms originally developed for the Virtual Heliodon.
-The Virtual Heliodon is a spatial augmented tangible user interface for daylighting analysis.
-The both Virtual Heliodon and OASIS rely on the physical sketch interpretation algorithm (PSIA) and the daylight rendering engine (DRE). 
-The physical sketch interpretation algorithm (PSIA) is used to convert physical sketches, in the Virtual Heliodon's tangible user interface, to water-tight triangle meshes.
-This triangle mesh is then used a input for the daylight rendering engine (DRE).
-The daylight rendering engine (DRE) is a scalable renderer that uses GPU-accelerated photon mapping to produce daylight visualizations at interactive frame rates.
-Furthermore, while there are many well established architectural tools for daylight analysis in the later stages of the architectural design process, there exist only a handful of tools that are used in the early stages of design.
-We will discuss how both OASIS and the Virtual Heliodon share common goals with some of these more popular daylight analysis tools.
+In OASIS I use both the Virtual Heliodon's daylight rendering engine and the physical sketch interpretation algorithm.
+In order to understand why I use both of these key components, the original purpose of each component must be made clear.
+The physical sketch interpretation algorithm was originally used to convert physical sketches into 3D water-tight triangle meshes for use in the daylight rendering engine.
+The daylight rendering engine's initial purpose was to generate daylight renderings and produce texture images that would be superimposed onto physical sketches.
+This method provided users a view point independent visualization of daylight within an architectural space.
+While there were other daylight rendering engine alternatives, we choose to use the Virtual Heliodon's native rendering engine for its speed, compatibility, and scalability.
+Moreover, there are a variety of related daylight analysis tools from which architects can choose from.
+However, very few tools concentrate on the early design stage of architectural design.
+OASIS is not the most fully featured architectural modeling tool; however, it is one of the few early design tools that features a sketching interface.
