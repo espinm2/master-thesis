@@ -177,6 +177,13 @@ Similarities between the drag-and-drop procedure and the Virtual Heliodon's Tang
 \label{fig:oldvh}
 \end{figure}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{wall_win}
+\caption{How to create walls and windows via the click-draw-release procedure.}
+\label{fig:wall_win}
+\end{figure}
+
 % Discussion about Eric's work
 Additionally, OASIS is currently undergoing the investigation of a new sketching interface that would allow users to draw free form lines, shapes, and letters.
 Using this new sketching interface users could traditionally draw walls and windows to define architectural sketches on OASIS.
@@ -184,21 +191,54 @@ User's drawing accuracy can vary dramatically depending on the input devices use
 This new interface is investigating how to correct users' sketches to  generate the intermediate primitives file required to create  3D closed meshes for simulations.
 Extensive A/B testing between these three methods of sketching walls and windows  would be required to to decide which interface is most intuitive to users.
 
-
-
 \paragraph{Furniture Placement}
-% Why is furniture important
-% Scale
-% Meaning (identity)
-% Relate to space
-% Discussion about how we place furniture
-% Discussion about furture work on sketched furniture items
-% Dynamic scale??
+
+Another difference between OASIS and the Virtual Heliodon is the support of furniture items.
+Walls and windows are not the only elements that affect daylighting;
+furniture can also occlude, diffuse, and reflect daylight.
+Moreover, daylight distribution is scale invariant and as a result the Virtual Heliodon did not concern itself much with communicating to users a sense of scale.
+We currently support statically sized furniture items in OASIS, such as beds, desks, and wardrobes.
+These furniture items are used to indirectly communicate a sense of scale to users.
+Since furniture items cannot be made larger or smaller, users are forced to sketch architectural spaces in respect to the size of furniture items.
+Furthermore unlike walls and windows, furniture items are placed into the canvas by first clicking a furniture item button; these buttons are located on the top of the \textit{Sketch a Room} page.
+After choosing a furniture item, OASIS will place the item at the center of the canvas.
+Furniture items use the same drag-and-drop procedure as mentioned previously in Figure-\ref{fig:oldvh}.
+Users can manipulate furniture items via both translations and rotations. 
+Furniture items can be rotated along their center axis via FreeTransform handles attached to the furniture item.
+Furniture items can also be translated by clicking and dragging on the item itself.
+Item manipulation via drag-and-drop procedures are a common UI mechanism. 
+Users will be familiar with these mechanisms if they have had experience using either photo editing software or slide-based presentation tools such as Microsoft PowerPoint\cite{todo}.
+
+% Discussion about future work on sketched furniture items + Dynamic scale??
+Additionally, OASIS is currently undergoing the investigation of a new sketching interface that would allow users to draw free form lines, shapes, and letters for not only wall and window placement but also furniture placement.
+This interface would allow users to freely draw symbols, that represent furniture items, to determine the position and angle a furniture item will be placed into the canvas.
+Interpreting symbols is non-trivial and more research is required before A/B testing can be conducted to determine the advantages of freely drawing furniture items.
+
+
 \paragraph{Removal of Elements}
-% Why is removal important
-% side: machines do better removal than pen & paper
-% How do we implement it
-% Alternatives
+OASIS also supports the removal of walls, windows, and furniture items.
+Since users cannot reposition their drawn walls and windows after their initial placement, the ability to remove and redraw a wall or window is essential.
+The removal of all sketch based elements and furniture is done via a click-to-remove process.
+To remove items users must first click on the remove button as illustrated in Figure-\ref{fig:remove}A, secondly users must mouse over the item to be removed as shown in Figure-\ref{fig:remove}B.
+Items to be removed upon the left mouse button click are highlighted in red as shown in Figure-\ref{fig:remove}C.
+No items are removed from the canvas until the user's left mouse button clicks on a selected item.
+An alternative removal mechanism would allowed users to drag walls and windows and ``drop'' elements off the canvas. 
+This alternative removal mechanism is intended to mimic the Virtual Heliodon's tangible user interface.
+While, OASIS does not support this drag-to-remove procedure,  implementing and A/B testing against this procedure would help us understand which removal procedure users find the most intuitive.
+
+% Include figure
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{remove}
+\caption{How to remove an item from the canvas via the click-to-remove procedure. 
+% A) First users must select the remove button located on the ribbon. 
+% B) Second the user must move mouse over the time to be deleted. 
+% C) Item to be deleted upon left mouse click is highlighted red. 
+% D) If the red highlighted item is the correct item to be removed click the left mouse button. 
+}
+\label{fig:remove}
+\end{figure}
+
 \paragraph{Cardinal Orientation}
 % Why is orientation important
 % How do we implement it? 
