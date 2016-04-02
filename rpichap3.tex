@@ -57,30 +57,30 @@
 		The FreeTransform extension is used to create FreeTransform handles on furniture items so that users may easily rotate and reposition furniture items where they please.
 		Figure-\ref{fig:oldvh}F demonstrates the handles FreeTransform generates for object manipulation.\\
 
-		\begin{figure}[h]
-		\centering
-		\includegraphics[width=1.0\textwidth]{new_pipeline}
-		\caption{OASIS pipeline diagram with the author's contributions noted in blue.}
-		\label{fig:new_pipeline}
-		\end{figure}
+		% \begin{figure}[h]
+		% \centering
+		% \includegraphics[width=1.0\textwidth]{new_pipeline}
+		% \caption{OASIS pipeline diagram with the author's contributions noted in blue.}
+		% \label{fig:new_pipeline}
+		% \end{figure}
 
-		As mentioned before, OASIS is a alternative interface to the Virtual Heliodon. 
-		The system pipeline in Figure-\ref{fig:new_pipeline} illustrates the components involved in OASIS.
-		In addition, Figure-\ref{fig:new_pipeline} notes all portions of OASIS that I directly contributed to.
-		The physical sketch interpretation algorithm that the Virtual Heliodon uses to generate watertight 3D meshes for simulations requires sketches be given as a collection of model primitives. 
-		Model primitives are stored in an intermediary primitives file where each line describes a wall,window, or furniture item in a sketch.
-		In the Virtual Heliodon the intermediary primitives file is created by a simple computer vision algorithm that detects walls, windows, and tokens through colored markers placed on the top of all physical primitives.
-		In our sketching interface I directly create this intermediary primitives file through the conversion of user created Raphael Objects.
-		Figure-\ref{fig:new_pipeline}A illustrates where the conversion occurs in our system pipeline.
-		When users convert their sketches into 3D models, the physical sketch interpretation algorithm reads in the generated intermediary primitives file.
-		The physical sketch interpretation algorithm outputs a closed triangle mesh that users can view in the \textit{Generate 3D Model} page.
-		Given confirmation that a 3D generated model matches the user's intention, the user can create a daylight simulation request in the \textit{Create Daylighting Simulation} page.
-		This portion of the system pipeline is illustrated in Figure-\ref{fig:new_pipeline}B.
-		After the submission of a daylight simulation request, I use the daylight simulation rendering engine to produce texture images.
-		These texture images capture illumination in a viewpoint independent manner.
-		On the \textit{Analyze Daylighting} page, I map these texture images into the scene to display a 3D daylight rendering of users' generated models.
-		Figure-\ref{fig:new_pipeline}C illustrates where texture mapping occurs in the system pipeline.
-		In brief, our pipeline shows that OASIS is an alternative interface to the main components in the Virtual Heliodon.
+		% As mentioned before, OASIS is a alternative interface to the Virtual Heliodon. 
+		% The system pipeline in Figure-\ref{fig:new_pipeline} illustrates the components involved in OASIS.
+		% In addition, Figure-\ref{fig:new_pipeline} notes all portions of OASIS that I directly contributed to.
+		% The physical sketch interpretation algorithm that the Virtual Heliodon uses to generate watertight 3D meshes for simulations requires sketches be given as a collection of model primitives. 
+		% Model primitives are stored in an intermediary primitives file where each line describes a wall,window, or furniture item in a sketch.
+		% In the Virtual Heliodon the intermediary primitives file is created by a simple computer vision algorithm that detects walls, windows, and tokens through colored markers placed on the top of all physical primitives.
+		% In our sketching interface I directly create this intermediary primitives file through the conversion of user created Raphael Objects.
+		% Figure-\ref{fig:new_pipeline}A illustrates where the conversion occurs in our system pipeline.
+		% When users convert their sketches into 3D models, the physical sketch interpretation algorithm reads in the generated intermediary primitives file.
+		% The physical sketch interpretation algorithm outputs a closed triangle mesh that users can view in the \textit{Generate 3D Model} page.
+		% Given confirmation that a 3D generated model matches the user's intention, the user can create a daylight simulation request in the \textit{Create Daylighting Simulation} page.
+		% This portion of the system pipeline is illustrated in Figure-\ref{fig:new_pipeline}B.
+		% After the submission of a daylight simulation request, I use the daylight simulation rendering engine to produce texture images.
+		% These texture images capture illumination in a viewpoint independent manner.
+		% On the \textit{Analyze Daylighting} page, I map these texture images into the scene to display a 3D daylight rendering of users' generated models.
+		% Figure-\ref{fig:new_pipeline}C illustrates where texture mapping occurs in the system pipeline.
+		% In brief, our pipeline shows that OASIS is an alternative interface to the main components in the Virtual Heliodon.
 
 	\subsection{Usability Features}
 
