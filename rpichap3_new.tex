@@ -320,6 +320,7 @@ Current work is being done on a \textit{Share A Model} viewer. This viewer would
 For that reason I choose to use a ribbon interface to organize the pages and tools on OASIS. 
 The Ribbon interface is common to contemporary Microsoft products and even a few other daylight analysis tools\cite{todo}.
 The hope is that organizing tools and pages in an interface that might be familiar to users would make using OASIS easier. Figure-\ref{fig:ribbon} illustrates the similarities between our interface and Microsoft Word.
+Additionally, I made the design choice of having OASIS appear in its own web browser window after being launched. Being in a standalone window is meant to further communicate that OASIS is a stand alone application.
 
 
 \begin{figure}[h]
@@ -336,33 +337,54 @@ Users can nonlinearly move between the \textit{Create/Load Model} page ,  the {S
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\textwidth]{states}
-\caption{Navigation diagram between pages and menus on OASIS.}
+\caption{This is a navigation diagram between pages and menus on OASIS.}
 \label{fig:states}
 \end{figure}
 
-\paragraph{Caching User Generated Models and Renderings}
 
-\Section{Issues and Limitations}
-% Computational Intensive Procedures
-% Saving Models Safety
-% Dealing with Clueless Users
-% Limitations
+\section{Problems Encountered During System Design}
 
-\section{Implementation}
+\paragraph{Computational Intensive Procedures}
+One of the first problems encountered in the design of OASIS was the fact that both the physical sketch interpretation algorithm and daylight rendering engine are computationally expensive. Furthermore, the daylight rendering engine requires specialized graphical processing hardware. Porting both of these components to work on multiple platforms would have been time intensive and hard to maintain. As a result we provide a server-client architecture for the generation of 3D models and daylight visualizations. Users define a set of parameters per rendering request and then submit a request to the server. The server is aware of all pending requests and handles all requests in a first come first serve manner. The model and the input parameters are then passed along to the daylight rendering engine. We then map the output  textures onto the walls, furniture items, and floor in the 3D model displayed on OASIS. Another important usability feature added was the caching of previous renderings on the machine hosting OASIS. The caching of previous renderings allows users to quickly view previous renderings without having to rerun the simulations on the server.	
+ 
+\paragraph{Storing Models}
+% Saving on Database
+Another problem I faced during the design of OASIS was ensuring the safety of user created content. 
+A simple solution to the problem would have been saving all user created content directly on the server hosting OASIS.
+However, this carries the risk of being corrupted during development. Additionally, if the server hosting OASIS were to suffer technical difficulties then user created content could potentially be lost.Our solution to the problem was storing user data both on the server hosting our web application and a database maintained by an outside party.
+Most user data can be recreated given an intermediate primitives file and rendering arguments. Data that cannot be recreated such as the intermediate primitives files and rendering arguments are stored in the outside database.
+User data that is reproducible using the physical sketch interpretation algorithm and daylight rendering engine is stored on the server hosting OASIS. This separation of non-reproducible and reproducible user data is done for safety. Keeping non-reproducible data off the server hosting OASIS would allow us to recreate all user created data if necessary from data stored on the outside database.
+% future mentions of load balancing
 
-\paragraph{Frameworks Used}
+\paragraph{Training Users}
+Another issue I faced during the design of OASIS was anticipating how much help users would require when using OASIS for the first time. At first we offered a ten minute tutorial video of how to generate a model, perform renovations, and generate daylight renderings. An unofficial small user study of under ten people was conducted to test if making this video available was helpful in training users. Most users skipped the video and did not understand how to use OASIS. As a result we then created help menus on all pages of OASIS. To access the help menu users would have to click the {Help Menu} button located on the top right of OASIS. Again, we ran a small user study of under ten people to test if users would understand how to use OASIS given a help menu.
+Results from that unofficial study showed that users did not use the help menu.
+Lastly, a short 1 minute long help video was created that walks users through generating daylighting renderings of a single model. This video automatically plays when users first log into OASIS.
+A formal pilot study was conducted that asked users if they found OASIS was easy-to-use and results from that pilot study are analyzed in Chapter 5. Overall, it seems that the problem of training users was solved by recognizing first time users and offering them a short tutorial video that did not cover all the features in OASIS, but just the essential features required to start.
 
-\paragraph{WebGL}
-
-\paragraph{RaphaelJS}
+\section{Implementation Details}
+% Grammer Check Please
+I used RibbonJS, a JavaScript port of Microsoft's Ribbon user interface, in order to present tools to users in a familiar fashion\cite{todo}. 
 Another framework used in our sketching interface is RaphaelJS\cite{todo}.
 Raphael JS is a 3D vector graphics library for JavaScript. 
 I use RaphaelJS to create 2D graphics of objects users places into sketches. I also use RaphaelJS because it supports vectorized lines and shapes, allowing our interface  to be re-sizable with lost of visual quality.
 I also use Raphael FreeTransform in conjunction with RaphaelJS\cite{todo}. 
 The FreeTransform extension is used to create FreeTransform handles on furniture items so that users may easily rotate and reposition furniture items where they please.
-Figure-\ref{fig:oldvh}F demonstrates the handles FreeTransform generates for object manipulation.\\
+Figure-\ref{fig:oldvh}F demonstrates the handles FreeTransform generates for object manipulation.
+I use RaphaelJS to manage the 2D elements in our online sketching interface, however, I use WebGL to view renderings and 3D interpreted models. 
+Specifically, I use the WebGL library ThreeJS\cite{}.
+ThreeJS is a framework that provides useful wrappers for common WebGL functions.
+WebGL is supported on most web browsers including Google Chrome and Mozilla Firefox\cite{}.
+WebGL gives us the ability to have our sketching interface online in a platform independent manner.
 
-\paragraph{RibbonJS}
+
+
+
+
+
+
+
+
 
 \section{Chapter Summary}
 % Summary of what we covered
