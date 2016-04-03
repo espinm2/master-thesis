@@ -329,18 +329,26 @@ The hope is that organizing tools and pages in an interface that might be famili
 \label{fig:ribbon}
 \end{figure}
 
-
 \paragraph{Nonlinear Navigation in OASIS}
+Although we recommend beginners navigate pages on OASIS linearly, nonlinear navigation is also supported. For example, non-first time users can log into OASIS and jump directly to the \textit{Generate a 3D Model} page. This page will display the last model the user was working on before leaving OASIS. Similarly, a non-first time user logging back into OASIS can jump to the \textit{Sketch A Room} page and the last sketch the user was working on before leaving OASIS will be displayed. 
+Users can nonlinearly move between the \textit{Create/Load Model} page ,  the {Sketch A Room} page , the \textit{Generate a 3D Model} page and the \textit{Create A Daylight Simulation} page without state changes to OASIS. However, the \textit{Analyze Simulation} page is only reachable through the viewing of a daylight simulation from the \textit{Create A Daylight Simulation} page. Additionally, when viewing the daylight renderings of a model on the \textit{Analyze Simulation} page a state change occurs. Viewing a rendering has the same effect as loading a sketch; this change will be reflected if a user navigates to the \textit{Generate a 3D Model} page or the \textit{Sketch A Room} page. Figure-\ref{fig:states} illustrates the navigation between pages on OASIS. Overall, OASIS supports nonlinear navigation to save advance users time from having to follow pages linearly.
 
-% Non-Linearity in OASIS
-% Loading Previous Models and Rendering Task
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{states}
+\caption{Navigation diagram between pages and menus on OASIS.}
+\label{fig:states}
+\end{figure}
 
-\paragraph{Problems Encountered}
+\paragraph{Caching User Generated Models and Renderings}
+
+\Section{Issues and Limitations}
 % Computational Intensive Procedures
 % Saving Models Safety
 % Dealing with Clueless Users
+% Limitations
 
-\paragraph{Implementation}
+\section{Implementation}
 
 \paragraph{Frameworks Used}
 
