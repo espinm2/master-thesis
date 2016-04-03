@@ -283,36 +283,49 @@ Again, testing would be required before any conclusions can be drawn about which
 
 \section{3D model viewer}
 
-\subsection{Physical Sketch Interpretation Algorithm Viewer}
-\paragraph{Intention}
-\paragraph{Examples of successful interpretations}
-\paragraph{Examples of unsuccessful interpretations}
+\paragraph{Physical Sketch Interpretation Algorithm Viewer}
+% Intention
+The physical sketch interpretation viewer is located on the \textit{Generate 3D Model Page}.
+This is a simple viewer that display the 3D watertight mesh created from users' architectural sketches.
+It is important to display this information to uses because, although the physical sketch interpretation algorithm generally matches users' intentions, there are cases where the 3D watertight mesh does not match users' intentions.
+Allowing the user to view this model, before continuing to analyzing an unitnted architectural space, will save users time. 
+Additionall it would provide users a chance to make alterations to their so that physical sketch interpation algorithm better user stands users intention, either though better defining an arichtectural space or simplfixing complex models to lesser level of detail.
+% Examples of successful interpretations
+Figure-\ref{fig:work_fail}A illustrates cases where user 3D generated mesh match the user's orginal intention.
+Figure-\ref{fig:work_fail}B illusrtates the cae where users 3D generated mesh does not match user's intention.
+Altneritve interfaces have been concidered, however not pursued at this time.
+One such interface would acitivly invoke the physical sketch interpration algorithm upon updates to sketch. 
+An up to date interpretation of their sketch visuable to users as they activly sketch out their model.
+Such an interface would let users know actively as they sketch what the physical sketch interperation algorithm belives their sketch to be.
+The development of such an interface is left as future work.
 
-\subsection{Daylight Rendering engine viewer}
-\paragraph{Examples of successful interpretations}
-\paragraph{Examples of unsuccessful interpretations}
-\paragraph{Examples of over illuminatioh}
-\paragraph{Examples of under illuminatioh}
+\paragraph{Daylight Rendering Engine Viewer}
+% Examples of successful interpretations
+% Examples of unsuccessful interpretations
+% Examples of over illumination
+% Examples of under illumination
 
-\subsection{Share a Model viewer}
-\paragraph{Purpose of Model Viewer}
-\paragraph{Alternatives?}
+\paragraph{Share A Model Viewer}
+% Purpose of Model Viewer
+% Alternatives?
 
-\section{Web Application Design}
-\paragraph{Why is good UI important for our application}
-\paragraph{General User Interface choices}
-\paragraph{Non-Linearity in OASIS}
-\paragraph{Loading Previous Models and Rendering Task}
+\paragraph{Web Application Design}
+% Why is good UI important for our application
+% General User Interface choices
+% Non-Linearity in OASIS
+% Loading Previous Models and Rendering Task
 
-\section{Problems Encountered}
-\paragraph{Computational Intensive Procedures}
-\paragraph{Saving Models Safety}
-\paragraph{Dealing with Clueless Users}
+\paragraph{Problems Encountered}
+% Computational Intensive Procedures
+% Saving Models Safety
+% Dealing with Clueless Users
 
-\section{Implementation}
+\paragraph{Implementation}
 
-\subsection{Frameworks Used}
+\paragraph{Frameworks Used}
+
 \paragraph{WebGL}
+
 \paragraph{RaphaelJS}
 Another framework used in our sketching interface is RaphaelJS\cite{todo}.
 Raphael JS is a 3D vector graphics library for JavaScript. 
@@ -321,11 +334,7 @@ I also use Raphael FreeTransform in conjunction with RaphaelJS\cite{todo}.
 The FreeTransform extension is used to create FreeTransform handles on furniture items so that users may easily rotate and reposition furniture items where they please.
 Figure-\ref{fig:oldvh}F demonstrates the handles FreeTransform generates for object manipulation.\\
 
-
 \paragraph{RibbonJS}
-
-
-\subsection{Window Snapping}
 
 \section{Chapter Summary}
 % Summary of what we covered
