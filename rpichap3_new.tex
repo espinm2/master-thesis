@@ -96,7 +96,6 @@ Figure-\ref{fig:overview}F illustrates the \textit{Analyze Simulation} page.
 The \textit{Analyze Simulation} page will also host a variety of daylight visualizations that users can toggle between to perform both qualitative and quantitative daylight analysis.
 All in all, we hope that OASIS has a small learning curve and allows users to quickly preform daylight analysis with the least cost of effort.
 
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\textwidth]{overview}
@@ -104,7 +103,7 @@ All in all, we hope that OASIS has a small learning curve and allows users to qu
 \label{fig:overview}
 \end{figure}
 
-\paragraph{Importance of UI}
+\paragraph{Importance of UI}\label{ui_importance}
 A previous survey discovered that on average 48\% of written code for a given application is made up of user interface implementation\cite{Myers1992}.
 The same survey also noticed that 50\% of time spend coding an application is devoted to implementing the user interface\cite{Myers1992}.
 User interface design is important to the success and usability of any piece of software.
@@ -283,35 +282,56 @@ Again, testing would be required before any conclusions can be drawn about which
 
 \section{3D model viewer}
 
-\paragraph{Physical Sketch Interpretation Algorithm Viewer}
-% Intention
-The physical sketch interpretation viewer is located on the \textit{Generate 3D Model Page}.
-This is a simple viewer that display the 3D watertight mesh created from users' architectural sketches.
-It is important to display this information to uses because, although the physical sketch interpretation algorithm generally matches users' intentions, there are cases where the 3D watertight mesh does not match users' intentions.
-Allowing the user to view this model, before continuing to analyzing an unitnted architectural space, will save users time. 
-Additionall it would provide users a chance to make alterations to their so that physical sketch interpation algorithm better user stands users intention, either though better defining an arichtectural space or simplfixing complex models to lesser level of detail.
-% Examples of successful interpretations
-Figure-\ref{fig:work_fail}A illustrates cases where user 3D generated mesh match the user's orginal intention.
-Figure-\ref{fig:work_fail}B illusrtates the cae where users 3D generated mesh does not match user's intention.
-Altneritve interfaces have been concidered, however not pursued at this time.
-One such interface would acitivly invoke the physical sketch interpration algorithm upon updates to sketch. 
-An up to date interpretation of their sketch visuable to users as they activly sketch out their model.
-Such an interface would let users know actively as they sketch what the physical sketch interperation algorithm belives their sketch to be.
-The development of such an interface is left as future work.
+\paragraph{Sketch Interpretation Viewer}
+The sketch interpretation viewer is located on the \textit{Generate 3D Model Page}. This is a simple viewer that displays the 3D watertight mesh created from users' architectural sketches. Users can zoom, rotate, and pan on this viewer. Additionally, walls facing the viewer are rendered transparently so that users can view the inside of their sketch from any view point, as seen in Figure-\ref{viewer}A.
+It is important to display this information to users because, although the physical sketch interpretation algorithm generally matches users' intentions, there are cases where the 3D watertight mesh does not match users' intentions. Allowing  users to view the interpretation of their model, before continuing to analyzing an unintentional architectural space, will save users time. Additionally it would provide users a chance to make alterations,  so that the physical sketch interpretation algorithm better understands users intention; this can be accomplished by better defining an architectural space or simplifying complex models to lesser levels of detail.
+Alternative interfaces have been considered, however not pursued at this time. An alternative interface would actively invoke the physical sketch interpretation algorithm upon any updates to a sketch. An up to date interpretation of their sketch would be visible to users as they actively sketch out their model. Live interpretations would let the user know exactly when a generated model deviates from the user's original intention; Knowing exactly when the interpretation between the user and our algorithm deviates would allow the user to make alterations to their sketch without having to guess as to which elements in the sketch contributed to the misinterpretation. The development of such an interface is left as future work.
 
-\paragraph{Daylight Rendering Engine Viewer}
-% Examples of successful interpretations
-% Examples of unsuccessful interpretations
-% Examples of over illumination
-% Examples of under illumination
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{viewer}
+\caption{On the left is an example of the sketch interpretation viewer and on the right is an example of the daylight rendering viewer.}
+\label{fig:viewer}
+\end{figure}
+
+\paragraph{Daylight Rendering Viewer}
+The daylight rendering viewer is located on the \textit{Analyze Simulation} page. This viewer supports the same navigation controls as the sketch interpretation viewer. However, there are two visualization modes users can choose from on the daylight rendering viewer; this viewer supports daylight renderings and false color visualizations. These two visualization modes are illustrated in Figure-\ref{false_color}.
+In Figure-\ref{false_color}B the false color visualization brings users attention to areas that suffer from over and under illumination. This feature was ported from the Virtual Heliodon and displays a textured checkerboard image on surfaces that fall below or above specific thresholds in relation to the daylight rendering engine's illumination values\cite{nasman2013evaluation}. Red checkerboard patterns are used to represent over illumination and blue checkerboard patterns for under illumination.Our intention as an early design tool is to have users analyze the daylight visualization results on the \textit{Analyze Simulation} page. From their analysis users are either satisfied with the distribution of daylight in their model or choose to make renovations. Improvements include making alterations to diffuse lighting if over illumination is a problem. Additionally, improvements could include making windows larger or changing the orientation of the room to make better use of daylight. Overall, the daylight rendering viewer should not be the final step on users' work flow in OASIS, but instead be a point of evaluation that communicates to users where problems lie so that they may go back and make edits to their design and continue the cycle of the creative iterative design process. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{false_color}
+\caption{The two visualization modes of the daylight rendering viewer. On the left is a daylight rendering of a model and on the right is a false-color visualization of a model highlighting areas that suffer from over and under illumination.}
+\label{fig:false_color}
+\end{figure}
 
 \paragraph{Share A Model Viewer}
-% Purpose of Model Viewer
-% Alternatives?
+Current work is being done on a \textit{Share A Model} viewer. This viewer would allow users to share models via generated URLS.The purpose of this viewer is two fold. Firstly, I suspect it would make sharing models between users much easier than sharing accounts or taking screenshots of OASIS and replicating sketches via tracing. In essence this feature would allow users to fork models from other users. Secondly, I hope this feature would allow users to share models between non-users, including family and friends. Rather than taking screenshots, non-users can visit the URL provided from a user and view the 3D rendering of a model without needing to sign up for an account. Figure-\ref{fig:share} illustrates the viewer in its current state. As mentioned, this stand alone viewer is currently under development.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{share}
+\caption{Share A Model viewer in its current state of development. No user registration is required to view a model.}
+\label{fig:share}
+\end{figure}
 
-\paragraph{Web Application Design}
-% Why is good UI important for our application
-% General User Interface choices
+\section{General Web Application Design}
+
+\paragraph{Ribbon Design Choice} As mentioned previously in section-\ref{ui_importance} the user interface of any tool is of great significance. 
+For that reason I choose to use a ribbon interface to organize the pages and tools on OASIS. 
+The Ribbon interface is common to contemporary Microsoft products and even a few other daylight analysis tools\cite{todo}.
+The hope is that organizing tools and pages in an interface that might be familiar to users would make using OASIS easier. Figure-\ref{fig:ribbon} illustrates the similarities between our interface and Microsoft Word.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{ribbon}
+\caption{On the top is Microsoft Word's ribbon and on the bottom is OASIS' version of a ribbon.}
+\label{fig:ribbon}
+\end{figure}
+
+
+\paragraph{Nonlinear Navigation in OASIS}
+
 % Non-Linearity in OASIS
 % Loading Previous Models and Rendering Task
 
