@@ -357,32 +357,27 @@ User data that is reproducible using the physical sketch interpretation algorith
 % future mentions of load balancing
 
 \paragraph{Training Users}
-Another issue I faced during the design of OASIS was anticipating how much help users would require when using OASIS for the first time. At first we offered a ten minute tutorial video of how to generate a model, perform renovations, and generate daylight renderings. An unofficial small user study of under ten people was conducted to test if making this video available was helpful in training users. Most users skipped the video and did not understand how to use OASIS. As a result we then created help menus on all pages of OASIS. To access the help menu users would have to click the {Help Menu} button located on the top right of OASIS. Again, we ran a small user study of under ten people to test if users would understand how to use OASIS given a help menu.
+Another issue I faced during the design of OASIS was anticipating how much help users would require when using OASIS for the first time. At first we offered a ten minute tutorial video of how to generate a model, perform renovations, and generate daylight renderings. An unofficial small user study of under ten people was conducted to test if making this video available was helpful in training users. Most users skipped the video and did not understand how to use OASIS. As a result we then created help menus on all pages of OASIS. To access the help menu users would have to click the \textit{Help Menu} button located on the top right of OASIS. Again, we ran a small user study of under ten people to test if users would understand how to use OASIS given a help menu.
 Results from that unofficial study showed that users did not use the help menu.
 Lastly, a short 1 minute long help video was created that walks users through generating daylighting renderings of a single model. This video automatically plays when users first log into OASIS.
 A formal pilot study was conducted that asked users if they found OASIS was easy-to-use and results from that pilot study are analyzed in Chapter 5. Overall, it seems that the problem of training users was solved by recognizing first time users and offering them a short tutorial video that did not cover all the features in OASIS, but just the essential features required to start.
 
 \section{Implementation Details}
-% Grammer Check Please
-I used RibbonJS, a JavaScript port of Microsoft's Ribbon user interface, in order to present tools to users in a familiar fashion\cite{todo}. 
+There were many frameworks used in the development of OASIS.
+A few notable ones include RibbonJS, RaphaelJS, and WebGL.
+RibbonJS is a JavaScript port of Microsoft's ribbon user interface.
+RibbonJS not only supports the generation of a ribbon but also provides event handlers.
 Another framework used in our sketching interface is RaphaelJS\cite{todo}.
-Raphael JS is a 3D vector graphics library for JavaScript. 
-I use RaphaelJS to create 2D graphics of objects users places into sketches. I also use RaphaelJS because it supports vectorized lines and shapes, allowing our interface  to be re-sizable with lost of visual quality.
-I also use Raphael FreeTransform in conjunction with RaphaelJS\cite{todo}. 
-The FreeTransform extension is used to create FreeTransform handles on furniture items so that users may easily rotate and reposition furniture items where they please.
-Figure-\ref{fig:oldvh}F demonstrates the handles FreeTransform generates for object manipulation.
-I use RaphaelJS to manage the 2D elements in our online sketching interface, however, I use WebGL to view renderings and 3D interpreted models. 
-Specifically, I use the WebGL library ThreeJS\cite{}.
+RaphaelJS is a 2D vector graphics library for JavaScript. 
+I use RaphaelJS to create the 2D graphics for walls, windows, and furniture items.
+ I also use the FreeTransform extension for RaphaelJS\cite{todo}. 
+The FreeTransform extension is used to create FreeTransform handles so that users may easily rotate and reposition furniture items.
+Lastly, I use WebGL to display renderings and 3D interpreted models on OASIS. 
+Specifically, I use the WebGL library ThreeJS\cite{todo}.
 ThreeJS is a framework that provides useful wrappers for common WebGL functions.
-WebGL is supported on most web browsers including Google Chrome and Mozilla Firefox\cite{}.
-WebGL gives us the ability to have our sketching interface online in a platform independent manner.
-
-
-
-
-
-
-
+WebGL is supported on most web browsers including Google Chrome and Mozilla Firefox\cite{todo}.
+Displaying complex 3D models on web browsers is non-trivial.
+As a result WebGL gives us the unique ability to have our sketching interface online in a platform independent manner.
 
 
 
