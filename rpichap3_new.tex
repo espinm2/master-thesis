@@ -241,12 +241,45 @@ While, OASIS does not support this drag-to-remove procedure,  implementing and A
 
 \paragraph{Cardinal Orientation}
 % Why is orientation important
+The cardinal orientation a of a window has significant impact on daylight distribution in an architectural space.
+In OASIS and all daylight analysis tools require that users define cardinal orientation in a architectural space.
+Notably, the cardinal orientation of user sketches needs to be defined in order to simulate direct lighting.
 % How do we implement it? 
+In order to define cardinal orientation users must first click on the orientation button, located in the \textit{Sketch a Room} page's ribbon depicted in Figure-\ref{fig:geoloc}A.
+Then users can click and drag anywhere on the canvas to define cardinal orientation.
+Specifically, holding the left mouse button on canvas will move the North and South labels around the circumference of the canvas to define the cardinal orientation of the sketch, as shown in Figure-\ref{fig:geoloc}B through D.
 % Alternatives
+Furthermore, the Virtual Heliodon allows the user to place a north arrow token onto the tabletop to define the cardinal orientation of a physical sketch.
+An analogous procedure would require users sketch an arrow on OASIS in order to define the cardinal orientation of their sketches.
+Other options include manually typing the model's degree offset from the north arrow; This procedural method of defining the cardinal orientation is common in other daylight software.
+Testing would be required to conclude which method of defining cardinal orientation is most intuitive to users.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{geoloc}
+\caption{
+How to set the cardinal orientation and geographical location of a sketch.}
+\label{fig:geoloc}
+\end{figure}
+
 \paragraph{Geographical Positioning}
-% Why is location important
-% How do we implement it? 
-% Alternatives
+Daylight distribution is  not only dependent on an architectural space's cardinal orientation, but also from its geographic location.
+South facing windows in the northern hemisphere experience direct sunlight for most of the day, however north facing windows do not.
+In the southern hemisphere, the opposite is true; North facing windows experience direct sunlight and south facing windows do not.
+Additionally, the sun's highest point in the sky varies from buildings located in the tropics and buildings located outside them.
+For these reasons it is important that in OASIS we provide users a way to define a sketche's geographical location.
+To define a geographical location users must click on the location button next to the orientation button depicted in Figure-\ref{fig:geoloc}E.
+Clicking the location button will bring up a map projection where users can select their model's geographical location by clicking anywhere on the map, as shown in Figure-\ref{fig:geoloc}F and G.
+Once the user has selected a location, a red marker is placed on that location and the map  disappears revealing the sketching interface, as depicted in Figure-\ref{fig:geoloc}H.
+Users do not need the exact latitude and longitude values because we intend OASIS to be an early design tool. 
+Furthermore, daylighting varies significantly depending on what hemisphere a model is located. Daylighting also varies depending on a model's location relative to the equator.
+Inaccurately selecting a geographical position off by an entire state or even country will not vary daylighting results much.
+Figure-\ref{fig:geoloc} illustrates how a sketch's cardinal orientation and geographical location are defined.
+The Virtual Heliodon offers no analogous interface to define geographic location of sketches. 
+All sketches in the Virtual Heliodon are set to Troy, NY.
+Most daylight analysis software allows users choice from a variety of major cities to define a model's geographic location;
+others allow users the ability to input exact geographic coordinates.
+Again, testing would be required before any conclusions can be drawn about which method is most intuitive to users for defining the geographic location of models.
 
 \section{3D model viewer}
 
