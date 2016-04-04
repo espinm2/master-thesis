@@ -1,11 +1,10 @@
 \chapter{Feature Design} \label{sec:feature}
 
-% Chapter overview of sections
-% Chapter overview of sections
-% Chapter overview of sections
-
 % Introduction into sections
 \section{System Overview}
+This chapter covers in detail what OASIS is as an architectural sketching interface and what our goals for OASIS are. In addition to discussing what our objective for OASIS is, I also discuss OASIS in relation to the Virtual Heliodon. We additionally explain the importance user interface plays in software and tools like OASIS. Moreover, we cover the specific design choices made in the sketching of walls and windows, furniture placement, and other related sketching operations; alternatives to sketching operations  currently used in OASIS are also considered in this chapter.
+Afterward, I cover the types of 3D models available to users on OASIS in the \textit{Generate a 3D model} page and \textit{Analyze Simulation} page.General web application design choices, not pertaining to the sketching interface and model viewer, are also covered. We also elaborate on problems encountered during the design of OASIS and the solutions to those problems. Some implementation details are discussed at the end of the chapter. Overall, this chapter covers my contributions to the design of OASIS.
+
 
 \paragraph{What is OASIS}
 % What is OASIS
@@ -380,7 +379,22 @@ Displaying complex 3D models on web browsers is non-trivial.
 As a result WebGL gives us the unique ability to have our sketching interface online in a platform independent manner.
 
 
-
 \section{Chapter Summary}
 % Summary of what we covered
+All things considered, OASIS is an alternative interface for key components in the Virtual Heliodon. Although both OASIS and the Virtual Heliodon share similar objectives, the two systems provide different interfaces for the design of architectural spaces. Specifically, OASIS focuses on its autonomy and availability to a broad range of users. 
+Research has shown that user interfaces can make or break an application and as a result OASIS aims to provide an intuitive interface for both experts and novices. Careful thought was put into the design of the sketching interface currently used on OASIS; however, alternative methods to sketching operations are being considered for future A/B testing. \\
 
+Additionally it is important to display the interpretation of users' online sketches. OASIS usually understands the user's intentions in an online sketch, however there are cases where the generated 3D model does not match the user's original intentions.
+Allowing  users to view the interpretation of their model, before continuing to analyzing an unintentional architectural space, will save users time.
+Similarly, the daylight rendering viewer is important because it gives users information about the daylight distribution in created architectural spaces. 
+This information, coupled with false-color visualizations, allows users to evaluate daylighting. All in all, both design choices taken in creating the  sketching interface and viewers on OASIS were made to provide users an intuitive  interface for the generation of architectural models and running of simulations.Other general design choices such as  using ribbons for organizing pages on OASIS and support of nonlinear navigation between pages on OASIS were made to benefit both expert and novice users. \\
+
+Furthermore, there were several problems encountered in the design of OASIS.
+OASIS is a solution to the non-trivial problem of providing a tool available to all users that relies heavily on computationally expensive processes. The client-server architecture was used to allow users to create physical sketch interpretations and render daylight visualizations at interactive rates without the need of specialized computer hardware. 
+Additionally, OASIS keeps users' created content safe by storing non-reproducible content separate from the server OASIS is hosted on. In the event that the machine hosting OASIS fails, no user created content will be lost.
+We will be able to recreate all reproducible user content from the saved non-reproducible content stored on the external database.
+It is also important to note that OASIS was not developed from scratch but rather from multiple existing tools and frameworks including the Virtual Heliodon, RibbonJS, RaphaelJS, and WebGL.
+The Virtual Heliodon was used for its physical sketch interpretation algorithm and daylight rendering engine.
+RibbonJS was used for its  emulated ribbon interface.
+RaphaelJS was used for its 2D vector graphics.
+And lastly,  WebGL was used for the ability to display 3D meshes on users' web browsers.
