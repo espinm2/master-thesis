@@ -88,6 +88,7 @@ Visiting the \textit{Generate 3D Model} page will invoke the generation of an in
 Figure-\ref{fig:overview}D illustrates the \textit{Generate 3D Model} page.
 Depending on the 3D watertight triangle mesh object created the user can either confirm their intention was met and navigate to the \textit{Create Daylighting Simulation} page or navigate back to the \textit{Sketch a Room} page to make alterations.
 On the \textit{Create Daylighting Simulation} page the user can either create new daylight renderings or view previously created renderings, as seen in Figure-\ref{fig:overview}E.
+How to create a rendering is depicted in detail in Figure-\ref{task}.
 After the creation of a rendering users can then click on the \textit{view} button associated with the rendering of interest.
 Clicking the \textit{view} button will redirect users to the \textit{Analyze Simulation} page.
 The \textit{Analyze Simulation} page will display a daylight rendering that users can interact with for analysis.
@@ -100,6 +101,19 @@ All in all, we hope that OASIS has a small learning curve and allows users to qu
 \includegraphics[width=0.8\textwidth]{overview}
 \caption{This is an overview of the pages on OASIS.}
 \label{fig:overview}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{task}
+\caption[How to create a request for daylighting simulations.]{How to create a request for daylighting simulations. 
+A) The user must first click on the \textit{create new task} button.
+B) The user must then define daylighting parameters such as date and time. Once complete the user may click the submit button to submit their request.
+C) The user's task is added to the table and the status of the task is displayed.
+D) Once the task is complete the user can click on the view button
+E) The user will be redirected to the \textit{Analyze Simulation} tab to view their rendering.
+}
+\label{fig:task}
 \end{figure}
 
 \paragraph{Importance of UI}\label{ui_importance}
@@ -294,8 +308,11 @@ Alternative interfaces have been considered, however not pursued at this time. A
 \end{figure}
 
 \paragraph{Daylight Rendering Viewer}
-The daylight rendering viewer is located on the \textit{Analyze Simulation} page. This viewer supports the same navigation controls as the sketch interpretation viewer. However, there are two visualization modes users can choose from on the daylight rendering viewer; this viewer supports daylight renderings and false color visualizations. These two visualization modes are illustrated in Figure-\ref{false_color}.
+The daylight rendering viewer is located on the \textit{Analyze Simulation} page. 
+This viewer supports the same navigation controls as the sketch interpretation viewer. However, there are two visualization modes users can choose from on the daylight rendering viewer; this viewer supports daylight renderings and false color visualizations. These two visualization modes are illustrated in Figure-\ref{false_color}.
 In Figure-\ref{false_color}B the false color visualization brings users attention to areas that suffer from over and under illumination. This feature was ported from the Virtual Heliodon and displays a textured checkerboard image on surfaces that fall below or above specific thresholds in relation to the daylight rendering engine's illumination values\cite{nasman2013evaluation}. Red checkerboard patterns are used to represent over illumination and blue checkerboard patterns for under illumination.Our intention as an early design tool is to have users analyze the daylight visualization results on the \textit{Analyze Simulation} page. From their analysis users are either satisfied with the distribution of daylight in their model or choose to make renovations. Improvements include making alterations to diffuse lighting if over illumination is a problem. Additionally, improvements could include making windows larger or changing the orientation of the room to make better use of daylight. Overall, the daylight rendering viewer should not be the final step on users' work flow in OASIS, but instead be a point of evaluation that communicates to users where problems lie so that they may go back and make edits to their design and continue the cycle of the creative iterative design process. 
+
+
 
 \begin{figure}[h]
 \centering
