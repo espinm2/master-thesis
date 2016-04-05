@@ -1,57 +1,215 @@
-\chapter{Conclusion and Future Works} \label{sec:results}
+\chapter{Conclusion and Future Works} \label{sec:con}
 
-\section{Conclusion}
-We performed a pilot user study to determine if OASIS was accessible, easy-to-use, and a step in the right direction as an early design tool for daylighting.
-Firstly, feedback from the study, which spanned only 2 weeks, demonstrates OASIS was accessible to a board range of users outside of the tradition pool of architecture students used in previous user studies\cite{}.
-Similarly, there was no feedback concerning problems with accessing our online sketching interface.
-Secondly, user feedback from our pilot user study showed that OASIS was both easy-to-use and fun.
-However, it is also important to note that our pool of participants consist mostly of non-experts. 
-Whether our sketching interface was easy to use for experts remains unknown.
-Lastly, most feedback collected from participants concerning the effectiveness of OASIS for daylighting analysis was positive -- with over 90\% of participants stating that OASIS was effective and clear.
-Conversely, one participant with 10+ years job experience in architecture stated that OASIS was not useful for daylight analysis.
-This participant, however, was not clear as to why OASIS was not effective for daylighting analysis.
-Before any conclusion can be drawn, I believe we need to collect more feedback from experts and advertise our online tool towards users with architectural experience.
-In brief my contributions include the creation of a novel architectural sketching interface for simulations that is both accessible and easy-to-use for non-experts to perform qualitative daylighting analysis.
-In addition I conducted an online pilot user study and analyzed the results from that study.
-Moreover, I created an online framework for the physical sketch interpretation algorithm and daylight rendering engine used in the Virtual Helidon.
+% ===============================================
+% we are going to list all of our findings
+% ===============================================
 
-\section{Future Work}
+	% when OASIS is put online, people will use it all the way through
+	Two weeks after publicizing our online architectural sketching interface for simulations(OASIS) on online bulletin boards and social media outlets 57 participants registered accounts on our tool.
+	% many users register, few use our tool
+	Despite taking the time to register with OASIS, 26 participants ceased using our tool immediately after.
+	% few users provide feedback relative to the users that actually use our tool
+	Moreover only 14 users readily provided quantitative feedback for our pilot user study.
 
-\subsection{Improved Evaluations of OASIS}
-My pilot user study was meant to be a short study to test key features of OASIS and understand problems users would encounter when using OASIS.
-Future user studies aimed at evaluating future iterations of OASIS in more detail can learn from mistakes made in this pilot user study.
-Firstly, the amount of users who registered and did not create a single model on OASIS is high.
-Despite lack of data on the retention rate of similar user studies, there are a few strategies that can be used to increase the number of users on OASIS.
-Goal driven user feedback may increase users interest in creating models on OASIS, sharing those models, and providing insightful feedback. 
-Disguising user studies as goal driven games has had successes in the crowd sourcing line drawings in previous research\cite{}.
-Having users use OASIS to fix a problem caused by daylighting, such glare in an office, with a scoring mechanism might incentive users to use OASIS as experts would. 
-Coupled with sharing features, that let users share 3D models or their scores would help OASIS self advertise itself to other users.
-Additional, making registration easier or even optional, for the first model, could increase user retention.
-Similarly, in our pilot study we encountered problems user made assumptions about feedback and models being viewed.
-Adding in a share feature, such as an automatically generated link that displays a model, would make sharing problem models much easier in feedback responses.
-Lastly, there was problem with users omitting feedback that could potentially communicate something to researchers.
-Making some feedback questions non-optional or inbreeding the feedback into the interface would make user intentions clearer.
+	% advertisement on online forms with voting systems is difficult 
 
-\subsection{Improvements To The Online Sketching Interface}
-Despite my original hypothesis not being met, the pilot user study did provide us feedback about what usability features to prioritize for future work.
-Firstly, the most requested feature in our sketching interface was support for doors.
-As mentioned previously, the physical sketch interpretation algorithm can interpret multi-room sketches.
-However, the lack of doors on the sketching interface communicated that we do not support multi-rooms sketches to many of our users.
-Additionally, the study revealed that room designs were greatly limited by the small number of furniture items in the system.
-While, OASIS is not meant to be a fully features daylighting analysis software, providing user a wider variety of furniture items would aide in the design of spaces other than bedrooms.
-Another common concern was scale, users wanted either control of scale in their sketches or more explicit communication of scale in our sketching interface.
-Giving users control of scale and providing an overlay of grid-lines on the sketching interface might better communicate scale of architectural spaces better than the currently indirect sense of scale through statically sized furniture items.
 
-Unrelated to results from our user study, OASIS is an online sketching interface for simulations. As of right now, the only true sketching features we support are straight walls. 
-Future work can be done to make our interface a full support sketching environment.
-Users in this sketching environment can draw not only straight walls, but also curved walls of any shape, in addition to sketching in windows and furniture items, similar to LightSketch\cite{}.
-Such a system would require some form of sketch recognition and a vocabulary or training sketches for common furniture items.
-Advantage so such a system would be one step closer to emulating how architects currently plan daylighting in the early design phase through rough pencil and paper sketches.
+	% many novices few experts
+	% ambiguous feedback is hard to analyze
 
-\subsection{Improvements To Daylighting Visualizations}
-OASIS incorporates the daylight rendering engine from the Virtual Heliodon.
-The daylight rendering engine uses a GPU ray tracing framework, known as NVidia Optix\cite{}, to perform photon mapping at interactive rates.
-In the pipeline of the daylight rendering engine standard daylighting metrics such as the daylight factor, daylighting glare probability, and luminous flux per unit area, can be calculated and visualized in various ways.
-Future work can focus on creating informative daylight visualizations optimized for our online viewer.\\
+	% strong demand for doors(arch)
+	% not enough people spend time on last tab (dyl)
+	% furniture selection is limited (dyl)
+
+% ================================================
+% significance/implications of all of our findings
+% ================================================
+
+	% when OASIS is put online, people will use it all the way through
+	  % Introduce FGM
+	  	% Introduce the two kinds of drivers, specialized vs general
+		% Promising for guided research via FGM
+
+	% many users register, few use our tool
+	  % crucial if your FGM requires general users
+	  % important because you want lure in vested users (he/she never tries cant become vest)
+
+	% few users provide feedback relative to the users that actually use our tool
+		% crucial if your FGM requires general users
+		% Vested users == users who will return + give feedback. qed they would not be in this sit
+
+	% advertisement on online forms with voting systems is difficult 
+	  % crucial if your FGM requires general users
+	  % crucial because you want to find your vested users
+
+	% many novices few experts
+		% positive result if your FGM requires general users
+		% negative if your results require vested users
+
+	% ambiguous feedback is hard to analyze
+		% inefficiently in the FGM, could lead to bad design choices
+
+	% strong demand for doors(arch)
+		% - Doors == Multiroom
+		% If you give people a sketching interface without doors, aparently they think you can't draw rooms anymore... thats just plain old neat! People are broken!
+
+	% not enough people spend time on last tab (dyl)
+		% (why) Might be having diffuiltiy getting to last tab
+		% (why) Lose intrest along the way, no goal
+		% (why) Models don't work
+		% (why) Not understand what to do at tab, 
+		% (expectations) maybe our visualizations are quick enough that poeople don't need too much time to sit back and appriciate...
+			% Models = homework programs
+			% Daylight issues = compilations error
+			% you wouldn't spend hours looking at error, you'd just back to your code once you read the error.
+		% > depends on the why in this case
+
+	% furniture selection is limited (dyl)
+
+% =============================================
+% system Limitations and Future Work
+% =============================================
+
+	% Feedback Generation machine
+	% ----------------------------------
+		% Not enough users to make statistically significant claim
+		% Timespan of pilot study (wish I had more time)
+		% Requirement imposed by WebGL (graphics card)
+		% Record more user actions on FGM
+	   		% Timer system could have been better
+			% which advertisement source they came from
+			% what browser they have
+			% mouse clicks
+			% tools used on ui
+			% if they consulted any help docs
+		% Better handle ambiguous answers 
+			% Convert some from active to passive
+			% Make some mandatory to continue
+		% Specific to OASIS
+			% how they interacted with 3d model
+				% maybe they did not even move it.
+				% maybe they tried to do FPPOV view
+			% Ask why they made renovations 
+			    % b/c of us
+			    % for daylighting changes
+
+	% Architectural Sketching
+	% ----------------------------------
+		% Primitives Control 
+			% wall control
+				% No support for curved walls
+				% Cannot define color of walls
+				% cannot define Wall reflectance 
+				% Free form lines for walls
+				% no way to reposition a line after being drawn
+				% No overdraw to redefine a line
+			% window control
+				% no control over window dimensions / exact placement
+				% No varying types of glass user interface
+				% No blinds on windows or shading devices
+			% furniture
+				% Requires more furniture, only bedroom right now
+				% No control over furniture dimensions
+				% No control over stacking of furniture
+			% No support of doors 
+			% No scale
+
+
+		% Limitations inherited from using physical sketching algorithm
+			% Offer only flat roofs 
+			% Fails ambiguous sketches sometimes
+
+	% Daylighting 
+	% ----------------------------------
+
+		% Time saver for users(can, but hard 2 do)
+			% could generate multiple days and times we might be interested in making
+			% No easy way to compare daylighting results 
+
+		% Additional information we can provide given what we have
+			% No sun paths
+			% No north arrow
+	   		% No control of thresholds for daylighting 
+
+	   	% Additional information we would have to work hard to include
+			% No other important values such as daylight factor 
+			% No glare is taken into consideration
+	    	% No varying types of glass for calculations
+	    	% No support for blinds (yes sup. for shading devices)
+	    	% No interior lighting 
+
+		% Limitations inherited from using the daylight rendering engine
+			% self occlusion of L building
+
+	% OASIS Specific 	
+	% ----------------------------------
+		% No helpful errors
+		% can only go only edit a model's latest renovation
+		% currently non collaborative
+
+	% Daylighting + Sketching Changes
+	% ----------------------------------
+		% outside building not taken into consideration 
+		% No interior lighting 
+
+Feedback from a pilot user study, which spanned only 2 weeks, shows OASIS was available to a broad range of users.
+This is important because it shows that users studies can be conducted via OASIS to perform feature evaluations, A/B testing, and general surveys with a minimal cost of effort per user included in the study.  
+There are currently no other online architectural sketching interfaces for simulations available; therefore,  gathering user feedback is important to the research of future daylighting visualizations and future improvements to our architectural sketching interface. 
+In that respect, OASIS serves as a platform for sound research that can be easily guided by constant user feedback. 
+Despite the fact that that the overall number of models produced on OASIS is less then number of models produced in previous studies on the Virtual Heliodon, the number of models we have collected so far is promising given the short span of time and small  audience we advertised to. 
+Overall, the pilot study helped us better understand what to improve upon in OASIS.
+
+
+
+
+% Similarly, there was no feedback concerning problems with accessing our online sketching interface.
+% User feedback from our pilot user study overall positive feedback.
+% However, it is also important to note that our pool of participants consist mostly of non-experts. 
+% Whether our sketching interface was easy to use for experts remains unknown.
+% Lastly, most feedback collected from participants concerning the effectiveness of OASIS for daylighting analysis was positive -- with over 90\% of participants stating that OASIS was effective and clear.
+% Conversely, one participant with 10+ years job experience in architecture stated that OASIS was not useful for daylight analysis.
+% This participant, however, was not clear as to why OASIS was not effective for daylighting analysis.
+% Before any conclusion can be drawn, I believe we need to collect more feedback from experts and advertise our online tool towards users with architectural experience.
+% In brief my contributions include the creation of a novel architectural sketching interface for simulations that is both accessible and easy-to-use for non-experts to perform qualitative daylighting analysis.
+% In addition I conducted an online pilot user study and analyzed the results from that study.
+% Moreover, I created an online framework for the physical sketch interpretation algorithm and daylight rendering engine used in the Virtual Heliodon.
+
+
+\paragraph{Improved Evaluations of OASIS}
+% My pilot user study was meant to be a short study to test key features of OASIS and understand problems users would encounter when using OASIS.
+% Future user studies aimed at evaluating future iterations of OASIS in more detail can learn from mistakes made in this pilot user study.
+% Firstly, the amount of users who registered and did not create a single model on OASIS is high.
+% Despite lack of data on the retention rate of similar user studies, there are a few strategies that can be used to increase the number of users on OASIS.
+% Goal driven user feedback may increase users interest in creating models on OASIS, sharing those models, and providing insightful feedback. 
+% Disguising user studies as goal driven games has had successes in the crowd sourcing line drawings in previous research\cite{}.
+% Having users use OASIS to fix a problem caused by daylighting, such glare in an office, with a scoring mechanism might incentive users to use OASIS as experts would. 
+% Coupled with sharing features, that let users share 3D models or their scores would help OASIS self advertise itself to other users.
+% Additional, making registration easier or even optional, for the first model, could increase user retention.
+% Similarly, in our pilot study we encountered problems user made assumptions about feedback and models being viewed.
+% Adding in a share feature, such as an automatically generated link that displays a model, would make sharing problem models much easier in feedback responses.
+% Lastly, there was problem with users omitting feedback that could potentially communicate something to researchers.
+% Making some feedback questions non-optional or inbreeding the feedback into the interface would make user intentions clearer.
+
+\paragraph{Improvements To The Online Sketching Interface}
+% Despite my original hypothesis not being met, the pilot user study did provide us feedback about what usability features to prioritize for future work.
+% Firstly, the most requested feature in our sketching interface was support for doors.
+% As mentioned previously, the physical sketch interpretation algorithm can interpret multi-room sketches.
+% However, the lack of doors on the sketching interface communicated that we do not support multi-rooms sketches to many of our users.
+% Additionally, the study revealed that room designs were greatly limited by the small number of furniture items in the system.
+% While, OASIS is not meant to be a fully features daylighting analysis software, providing user a wider variety of furniture items would aide in the design of spaces other than bedrooms.
+% Another common concern was scale, users wanted either control of scale in their sketches or more explicit communication of scale in our sketching interface.
+% Giving users control of scale and providing an overlay of grid-lines on the sketching interface might better communicate scale of architectural spaces better than the currently indirect sense of scale through statically sized furniture items.
+
+% Unrelated to results from our user study, OASIS is an online sketching interface for simulations. As of right now, the only true sketching features we support are straight walls. 
+% Future work can be done to make our interface a full support sketching environment.
+% Users in this sketching environment can draw not only straight walls, but also curved walls of any shape, in addition to sketching in windows and furniture items, similar to LightSketch\cite{}.
+% Such a system would require some form of sketch recognition and a vocabulary or training sketches for common furniture items.
+% Advantage so such a system would be one step closer to emulating how architects currently plan daylighting in the early design phase through rough pencil and paper sketches.
+
+\paragraph{Improvements To Daylighting Visualizations}
+% OASIS incorporates the daylight rendering engine from the Virtual Heliodon.
+% The daylight rendering engine uses a GPU ray tracing framework, known as NVidia Optix\cite{}, to perform photon mapping at interactive rates.
+% In the pipeline of the daylight rendering engine standard daylighting metrics such as the daylight factor, daylighting glare probability, and luminous flux per unit area, can be calculated and visualized in various ways.
+% Future work can focus on creating informative daylight visualizations optimized for our online viewer.\\
 
 
