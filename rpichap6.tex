@@ -28,7 +28,6 @@
 	however, for OASIS we are interested in experienced participants, who  ideally have used similar software, to provide informed feedback on design choices made for specialized features in OASIS.
 	Novice users are helpful in diagnosing basic usability features, however they lack the specialized knowledge to drive the development of certain features.
 
-
 	We also observed ambiguity in how participants answered feedback questions. 
 	Currently, on OASIS there is no default answer for feedback questions and all feedback is provided voluntarily.
 	This setup resulted in participants answering some feedback questions and skipping other questions.
@@ -37,14 +36,14 @@
 	These bad choices based on ambiguous feedback will cost us, the researcher, both time and effort.
 	Rewording these questions and restructuring of how we collect feedback is recommended for future work if we wish to drive feature design on OASIS based on participant feedback.
 
+	Also, our pilot user study showed a demand for doors and additional furniture items in our sketching interface.
+	The demand for doors is interesting because it seems that users generally thought OASIS did not support multi-room sketches because of the lack of doors in the sketching interface. 
+	We did not anticipate that doors would be important to the design of multiple rooms.
+	Additionally, we also discovered that participants spent about 39\% of their time on the sketching interface and only 7\% of their time viewing daylight results and visualizations.
+	The difference in time spent from the sketching interface and viewing simulation results could be from a variety of reasons. Participants could have lost interest while using OASIS and left before creating a rendering, they could have also encountered errors in the generation of 3D watertight models, and they could have also not understood how to use the simulations results. Overall, we cannot discern the significance of this behavior without understanding the cause of it. Moreover, it could be that we need to reconsider our expectations of how users distribute their time on OASIS. 
+	It could be the case that time distribution on OASIS is similar to writing a compilable program. After writing a program a developer will try to compile it. Upon seeing compilation errors the developer might glance over the error and return to revising their code. In this case most of the developers time is spent viewing code, and very little time is spent actually viewing compilation errors. Work flow on OASIS could also be similar, users could spend very little time viewing daylight visualizations and spend most of their time on the sketching interface trying to address problems discovered from the daylight visualizations.
+	Overall, the feedback we did collect over the course of our short pilot user study was promising and insightful.
 
-	% inefficiently in the FGM, could lead to bad design choices
-
-
-
-	Our study also showed a demand for doors and additional furniture items in our sketching interface.
-
-	We also discovered that participants spent about 39\% of their time on the sketching interface and only 7\% of their time viewing daylight results and visualizations.
 	
 % ================================================
 % significance/implications of all of our findings
@@ -94,12 +93,31 @@
 % =============================================
 % system Limitations and Future Work
 % =============================================
+\section{Limitations and Future Work}
+
+\subsection{Participant Driven Feature Design Limitations}
+
 
 	% Feedback Generation machine
 	% ----------------------------------
-		% Not enough users to make statistically significant claim
-		% Timespan of pilot study (wish I had more time)
-		% Requirement imposed by WebGL (graphics card)
+	 	% Not enough users to make statistically significant claim
+		One of the main limitations with our short pilot user study was that we did not collect enough quantitative feedback to make statistically significant claims about OASIS. While we did collect useful qualitative feedback, quantitative feedback provides a clearer picture of how users interact with our tool. In our current study we do not collect much in the way of passive quantitative data. If we hope to guide the design of features on OASIS based on data collected from participants we must collect more than just how long they spend on each page of our tool.
+		For example, future work can focus on collecting data pertaining to what online sources brings users to OASIS. Such information would be helpful in understanding where our dedicated participants are coming from and which online bulletin boards we should no longer advertise on. Additionally, future work can focus on keeping track of users' mouse clicks on OASIS.  It could be the case that users are not aware of some features on OASIS, or do not use some elements of our sketching interface. Having data on how exactly they use OASIS would be helpful in figuring out which tools need to be brought to users attention more. Keeping track of this data would also help us see if users are consulting help content on OASIS; it could be the case that users cannot find the help documents when they are most needed.
+		
+
+		Moreover, the timespan of this user study was limited to just two weeks. Recommended future work includes the extending of this pilot user study. We have yet to advertise to RPI affiliated sources or on more heavily populated online bulletin boards.
+		As mentioned previously, we are limited by the small pool of data available, so an extension of this pilot study might help us draw stronger conclusions about OASIS in its present state.
+		
+
+		An additional limitation, specific to OASIS, is that we require users web browser to support WebGL. WebGL is used to render 3D graphics on a user's web browser. WebGL does require that users have  computer hardware that contains either a  discrete or integrated graphics processing unit. While I suspect we support a a majority of computers, a small pool of potential users might not have the required hardware to run OASIS. 
+		Recommended future work could focus on detecting when a user does not have the required hardware, and rather then give them a manipulable 3D model to view, OASIS can provide them still images of their architectural space from an overhead view and various other angles. 
+		Another OASIS specific limitation that we encountered is that we did not ask users to state why they made renovations.
+		Currently, users can make renovations to models to either alter the distribution of lighting to a model or to fix misinterpretations that occurred during the generation of the 3D watertight model.
+
+		Because of the way our pilot study is currently setup, we do not know why users make renovations to models;
+		such information would be helpful in evaluating if users are having problems with the interpretation of their sketches.
+		Alterations to feedback questions is left as recommended future work.
+
 		% Record more user actions on FGM
 	   		% Timer system could have been better
 			% which advertisement source they came from
@@ -107,6 +125,8 @@
 			% mouse clicks
 			% tools used on ui
 			% if they consulted any help docs
+		% Timespan of pilot study (wish I had more time)
+		% Requirement imposed by WebGL (graphics card)
 		% Better handle ambiguous answers 
 			% Convert some from active to passive
 			% Make some mandatory to continue
@@ -118,7 +138,27 @@
 			    % b/c of us
 			    % for daylighting changes
 
-	% Architectural Sketching
+\subsection{Architectural Sketching Interface Limitations}
+	The pilot user study brought to our attention several limitation in our architectural sketching interface.
+	Many limitations pertain to primitives we support on our sketching interface.
+
+	Specifically, right now users designs can limited to only straight walls of 8 feed in height. Additionally, users are limited to white colored walls that all share the same reflectance properties. Interestingly, the physical sketch interpretation algorithm supports a wider variety of control over wall primitives than we currently offer on OASIS. Recommended future work on wall primitives includes the the addition of curved walls to the sketching interface, allowing users to choose from a variety of wall heights, ranging from cubical walls that are 12 feet in height, and designing a convention to color walls on the sketching interface.
+	Similarly, future work could potentially include supporting the sketching of free-form walls. 
+
+	Aside from control of walls, users are limited in the choice of window primitives we support.
+	Currently on OASIS, we support only one kind of window. While users my define window length in our sketching interface, they define a window's head-height or starting height from the floor to window sill.
+	Additionally, there are no controls of the kind of glass we put in windows. This is limits daylighting options because different window glazing reflect different amounts of daylight. Currently on OASIS, we have windows set to 50\% reflectance.
+	Also, most windows used in architecture feature shading devices, such as blinds or curtains. Without control over shading devices users cannot do much in terms of fixing over illumination without making renovations to the either walls or windows.
+	Recommended future work for windows in OASIS includes adding control over window dimensions, giving users a slider to control how much light a window will reflect, and adding support for shading devices for windows.
+
+	Our selection of furniture was an another limitation mentions a couple of times in the pilot study.
+	Currently users are limited to furniture items commonly found in dormitories and bedrooms. However, we do not limit users to creating other architectural spaces. Moreover, the furniture items we do support are non-scalable. Users are limited to specific size desk we provide, and while users can work around these limitations by joining desk together on the sketching interface, more control and custom furniture dimensions should be supported. A specific user stated that they would have liked to been able recreate a lofted bed in our interface. Future work on furniture to consider includes adding a wider variety of furniture items, allowing users to create custom furniture items, and supporting the stacking of furniture items.
+
+	% Mention doors
+
+	Lastly, because we use the physical sketching algorithm, OASIS inherits all it's limitations. Such as only supporting flat ceiling, and difficulty in interpreting ambiguous sketches that require domain knowledge of architectural spaces.
+
+		% Architectural Sketching
 	% ----------------------------------
 		% Primitives Control 
 			% wall control
@@ -139,10 +179,11 @@
 			% No support of doors 
 			% No scale
 
-
 		% Limitations inherited from using physical sketching algorithm
 			% Offer only flat roofs 
 			% Fails ambiguous sketches sometimes
+
+\subsection{Daylighting Limitations}
 
 	% Daylighting 
 	% ----------------------------------
@@ -177,14 +218,12 @@
 		% outside building not taken into consideration 
 		% No interior lighting 
 
-Feedback from a pilot user study, which spanned only 2 weeks, shows OASIS was available to a broad range of users.
-This is important because it shows that users studies can be conducted via OASIS to perform feature evaluations, A/B testing, and general surveys with a minimal cost of effort per user included in the study.  
-There are currently no other online architectural sketching interfaces for simulations available; therefore,  gathering user feedback is important to the research of future daylighting visualizations and future improvements to our architectural sketching interface. 
-In that respect, OASIS serves as a platform for sound research that can be easily guided by constant user feedback. 
-Despite the fact that that the overall number of models produced on OASIS is less then number of models produced in previous studies on the Virtual Heliodon, the number of models we have collected so far is promising given the short span of time and small  audience we advertised to. 
-Overall, the pilot study helped us better understand what to improve upon in OASIS.
-
-
+% Feedback from a pilot user study, which spanned only 2 weeks, shows OASIS was available to a broad range of users.
+% This is important because it shows that users studies can be conducted via OASIS to perform feature evaluations, A/B testing, and general surveys with a minimal cost of effort per user included in the study.  
+% There are currently no other online architectural sketching interfaces for simulations available; therefore,  gathering user feedback is important to the research of future daylighting visualizations and future improvements to our architectural sketching interface. 
+% In that respect, OASIS serves as a platform for sound research that can be easily guided by constant user feedback. 
+% Despite the fact that that the overall number of models produced on OASIS is less then number of models produced in previous studies on the Virtual Heliodon, the number of models we have collected so far is promising given the short span of time and small  audience we advertised to. 
+% Overall, the pilot study helped us better understand what to improve upon in OASIS.
 
 
 % Similarly, there was no feedback concerning problems with accessing our online sketching interface.
@@ -199,8 +238,8 @@ Overall, the pilot study helped us better understand what to improve upon in OAS
 % In addition I conducted an online pilot user study and analyzed the results from that study.
 % Moreover, I created an online framework for the physical sketch interpretation algorithm and daylight rendering engine used in the Virtual Heliodon.
 
+% \paragraph{Improved Evaluations of OASIS}
 
-\paragraph{Improved Evaluations of OASIS}
 % My pilot user study was meant to be a short study to test key features of OASIS and understand problems users would encounter when using OASIS.
 % Future user studies aimed at evaluating future iterations of OASIS in more detail can learn from mistakes made in this pilot user study.
 % Firstly, the amount of users who registered and did not create a single model on OASIS is high.
@@ -215,7 +254,7 @@ Overall, the pilot study helped us better understand what to improve upon in OAS
 % Lastly, there was problem with users omitting feedback that could potentially communicate something to researchers.
 % Making some feedback questions non-optional or inbreeding the feedback into the interface would make user intentions clearer.
 
-\paragraph{Improvements To The Online Sketching Interface}
+% \paragraph{Improvements To The Online Sketching Interface}
 % Despite my original hypothesis not being met, the pilot user study did provide us feedback about what usability features to prioritize for future work.
 % Firstly, the most requested feature in our sketching interface was support for doors.
 % As mentioned previously, the physical sketch interpretation algorithm can interpret multi-room sketches.
@@ -231,7 +270,7 @@ Overall, the pilot study helped us better understand what to improve upon in OAS
 % Such a system would require some form of sketch recognition and a vocabulary or training sketches for common furniture items.
 % Advantage so such a system would be one step closer to emulating how architects currently plan daylighting in the early design phase through rough pencil and paper sketches.
 
-\paragraph{Improvements To Daylighting Visualizations}
+% \paragraph{Improvements To Daylighting Visualizations}
 % OASIS incorporates the daylight rendering engine from the Virtual Heliodon.
 % The daylight rendering engine uses a GPU ray tracing framework, known as NVidia Optix\cite{}, to perform photon mapping at interactive rates.
 % In the pipeline of the daylight rendering engine standard daylighting metrics such as the daylight factor, daylighting glare probability, and luminous flux per unit area, can be calculated and visualized in various ways.
