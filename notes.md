@@ -119,3 +119,6 @@ Complex daylighting metrics including glare could be calculated for users’ geo
 
  Our daylighting simulation and projection system is currently limited to diffuse
 material properties and clear glass
+
+Although feedback from novice user is helpful in evaluating some elements of OASIS, we require feedback from experienced users to make large design choice pertaining to architectural analysis.
+

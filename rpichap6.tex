@@ -4,7 +4,6 @@
 % we are going to list all of our findings
 % Polish...
 % ===============================================
-
 	Within the first two weeks of our pilot user study  57 participants registered with our online architectural sketching interface for simulations (OASIS).
 	The large number of users who registered with OASIS is encouraging because participants using our tool and providing feedback helps evaluate current features and guide future design on OASIS.
 	OASIS is an early architectural design tool; however, OASIS can also be seen as the start of an interesting experiment in participant-driven feature design.
@@ -138,25 +137,24 @@
 			    % b/c of us
 			    % for daylighting changes
 
-\subsection{Architectural Sketching Interface Limitations}
-	The pilot user study brought to our attention several limitation in our architectural sketching interface.
-	Many limitations pertain to primitives we support on our sketching interface.
+\subsection{Architectural Sketching Interface}
 
-	Specifically, right now users designs can limited to only straight walls of 8 feed in height. Additionally, users are limited to white colored walls that all share the same reflectance properties. Interestingly, the physical sketch interpretation algorithm supports a wider variety of control over wall primitives than we currently offer on OASIS. Recommended future work on wall primitives includes the the addition of curved walls to the sketching interface, allowing users to choose from a variety of wall heights, ranging from cubical walls that are 12 feet in height, and designing a convention to color walls on the sketching interface.
-	Similarly, future work could potentially include supporting the sketching of free-form walls. 
+	The pilot user study brought to our attention several limitations in our architectural sketching interface. Some limitations pertain to primitives we support on our sketching interface.
 
-	Aside from control of walls, users are limited in the choice of window primitives we support.
-	Currently on OASIS, we support only one kind of window. While users my define window length in our sketching interface, they define a window's head-height or starting height from the floor to window sill.
-	Additionally, there are no controls of the kind of glass we put in windows. This is limits daylighting options because different window glazing reflect different amounts of daylight. Currently on OASIS, we have windows set to 50\% reflectance.
-	Also, most windows used in architecture feature shading devices, such as blinds or curtains. Without control over shading devices users cannot do much in terms of fixing over illumination without making renovations to the either walls or windows.
-	Recommended future work for windows in OASIS includes adding control over window dimensions, giving users a slider to control how much light a window will reflect, and adding support for shading devices for windows.
+	Specifically, right now user's designs are limited to only straight walls of 8 feet in height. Additionally, users are limited to white colored walls that all share the same reflectance properties. Interestingly, the physical sketch interpretation algorithm supports a wider variety of control over wall primitives than currently offered on OASIS. Recommended future work on wall primitives includes the addition of curved walls to the sketching interface, allowing users to choose from a variety of wall heights, and giving users control over wall's colors. Similarly, future work could potentially include supporting the sketching of free-form walls.
+	
 
-	Our selection of furniture was an another limitation mentions a couple of times in the pilot study.
-	Currently users are limited to furniture items commonly found in dormitories and bedrooms. However, we do not limit users to creating other architectural spaces. Moreover, the furniture items we do support are non-scalable. Users are limited to specific size desk we provide, and while users can work around these limitations by joining desk together on the sketching interface, more control and custom furniture dimensions should be supported. A specific user stated that they would have liked to been able recreate a lofted bed in our interface. Future work on furniture to consider includes adding a wider variety of furniture items, allowing users to create custom furniture items, and supporting the stacking of furniture items.
+	In addition to walls, users are limited in the choice of window primitives we support. Currently on OASIS, we support only one kind of window.
+	While users may define window length in our sketching interface, they cannot define a window's head-height or height along a wall.
+	Additionally, there is no control over window glazings; this limits daylighting options because window glazings reflect varying amounts of daylight. Also, most windows used in architecture feature shading devices, such as blinds or curtains. Without control over shading devices users cannot do much in terms of fixing over illumination without making renovations to either walls or windows. Recommended future work for windows in OASIS includes adding control over window dimensions, giving users a slider to control how much light a window will reflect, and adding support for shading devices for windows.
+	
+
+	Our selection of furniture was another limitation mentioned a couple of times in the pilot study. Currently users are limited to furniture items commonly found in dormitories and bedrooms. Moreover, the furniture items we do support are non-scalable. Users are limited to statically sized furniture we provide, and while users can work around these limitations by joining furniture items together on the sketching interface, more control and custom furniture dimensions should be supported. Future work on furniture to consider includes adding a wider variety of furniture items, allowing users to create custom furniture items, and supporting the stacking of furniture items.
 
 	% Mention doors
 
-	Lastly, because we use the physical sketching algorithm, OASIS inherits all it's limitations. Such as only supporting flat ceiling, and difficulty in interpreting ambiguous sketches that require domain knowledge of architectural spaces.
+	Lastly, because we use the physical sketching algorithm, OASIS inherits all it's limitations. Such as the generation of flat ceilings for all architectural spaces and the difficulty in interpreting ambiguous sketches that require domain knowledge of architecture.
+
 
 		% Architectural Sketching
 	% ----------------------------------
@@ -183,19 +181,29 @@
 			% Offer only flat roofs 
 			% Fails ambiguous sketches sometimes
 
-\subsection{Daylighting Limitations}
+\subsection{Daylighting}
 
 	% Daylighting 
 	% ----------------------------------
+
+		Immediate future work on the {Create Daylighting Simulation} page is recommended. Currently, users are limited to requesting a single daylighting task at a time. However, users looking to analyze the daylight distribution of an architectural space might want to do so for various points of time.
+		Having to manually create request one at a time would be time consuming. 
+		Giving users an option to automatically generate a task for every week of the year in a single click, or every hour of a specific day, would make creating daylight visualizations easier than they currently are. 
+		Similarly, on OASIS there is no easy way compare two daylight visualizations simultaneously. Future work is recommended to make comparative analysis on OASIS easier for our users.
 
 		% Time saver for users(can, but hard 2 do)
 			% could generate multiple days and times we might be interested in making
 			% No easy way to compare daylighting results 
 
+		Currently OASIS only supports daylight renderings and false-color visualizations. This may limit user's ability to analyze daylight in architectural spaces. Specifically, in order to infer the suns position in the sky, users must analyze cast shadows and  direct daylight in their renderings; however, the sun should be visualized above daylight renderings so that users do not have to infer the sun's position. Additionally, while our false color visualizations make distinguishing between over and under illumination easy, there are no current modifiable thresholds set in regards to what over and under illumination are in relation to. Immediate recommended future work includes allowing users to pick from a set of activities so that our system can set false-color thresholds in relation to what an architectural space will be used for.
+
 		% Additional information we can provide given what we have
 			% No sun paths
 			% No north arrow
 	   		% No control of thresholds for daylighting 
+
+
+   		As mentioned, the only analytical visualization OASIS supports are false color visualizations. However, other quantitative daylight measurements used can be visualized on OASIS; these include daylight factor and daylight glare probability. Also, support for varying glazing types, and shading devices, can be taken into consideration for future work.
 
 	   	% Additional information we would have to work hard to include
 			% No other important values such as daylight factor 
@@ -204,7 +212,9 @@
 	    	% No support for blinds (yes sup. for shading devices)
 	    	% No interior lighting 
 
-		% Limitations inherited from using the daylight rendering engine
+	    Lastly, OASIS uses the Virtual Heliodon's daylight rendering engine and as a result inherits its limitations. Specifically, the daylight rendering engine does not support the self occlusion of L shaped buildings or take into consideration electrical illumination.
+
+	     % Limitations inherited from using the daylight rendering engine
 			% self occlusion of L building
 
 	% OASIS Specific 	
@@ -217,6 +227,11 @@
 	% ----------------------------------
 		% outside building not taken into consideration 
 		% No interior lighting 
+
+
+
+
+
 
 % Feedback from a pilot user study, which spanned only 2 weeks, shows OASIS was available to a broad range of users.
 % This is important because it shows that users studies can be conducted via OASIS to perform feature evaluations, A/B testing, and general surveys with a minimal cost of effort per user included in the study.  
