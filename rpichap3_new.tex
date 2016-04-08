@@ -224,7 +224,7 @@ Users can manipulate furniture items via both translations and rotations.
 Furniture items can be rotated along their center axis via FreeTransform handles attached to the furniture item.
 Furniture items can also be translated by clicking and dragging on the item itself.
 Item manipulation via drag-and-drop procedures are a common UI mechanism. 
-Users will be familiar with these mechanisms if they have had experience using either photo editing software or slide-based presentation tools such as Microsoft PowerPoint\cite{todo}.
+Users will be familiar with these mechanisms if they have had experience using either photo editing software or slide-based presentation tools such as Microsoft PowerPoint.
 
 % Discussion about future work on sketched furniture items + Dynamic scale??
 Additionally, OASIS is currently undergoing the investigation of a new sketching interface that would allow users to draw free form lines, shapes, and letters for not only wall and window placement but also furniture placement.
@@ -338,7 +338,7 @@ Current work is being done on a \textit{Share A Model} viewer. This viewer would
 
 \paragraph{Ribbon Design Choice} As mentioned previously in section-\ref{ui_importance} the user interface of any tool is of great significance. 
 For that reason I choose to use a ribbon interface to organize the pages and tools on OASIS. 
-The Ribbon interface is common to contemporary Microsoft products and even a few other daylight analysis tools\cite{todo}.
+The Ribbon interface is common to contemporary Microsoft products and even a few other daylight analysis tools\cite{Dostal}.
 The hope is that organizing tools and pages in an interface that might be familiar to users would make using OASIS easier. Figure-\ref{fig:ribbon} illustrates the similarities between our interface and Microsoft Word.
 Additionally, I made the design choice of having OASIS appear in its own web browser window after being launched. Being in a standalone window is meant to further communicate that OASIS is a stand alone application.
 
@@ -384,18 +384,18 @@ A formal pilot study was conducted that asked users if they found OASIS was easy
 
 \section{Implementation Details}
 There were many frameworks used in the development of OASIS.
-A few notable ones include RibbonJS, RaphaelJS, and WebGL.
+A few notable ones include RibbonJS\footnote{http://ribbonjs.com/home[Accessed: Apr 8 2016]}, RaphaelJS\footnote{http://dmitrybaranovskiy.github.io/raphael/[Accessed: Apr 8 2016]}, and WebGL\footnote{https://www.khronos.org/webgl/[Accessed: Apr 8 2016]}.
 RibbonJS is a JavaScript port of Microsoft's ribbon user interface.
 RibbonJS not only supports the generation of a ribbon but also provides event handlers.
-Another framework used in our sketching interface is RaphaelJS\cite{todo}.
+Another framework used in our sketching interface is RaphaelJS.
 RaphaelJS is a 2D vector graphics library for JavaScript. 
 I use RaphaelJS to create the 2D graphics for walls, windows, and furniture items.
- I also use the FreeTransform extension for RaphaelJS\cite{todo}. 
-The FreeTransform extension is used to create FreeTransform handles so that users may easily rotate and reposition furniture items.
+I also use the FreeTransform extension for RaphaelJS. 
+The FreeTransform\footnote{https://github.com/AliasIO/Raphael.FreeTransform[Accessed: Apr 8 2016]} extension is used to create FreeTransform handles so that users may easily rotate and reposition furniture items.
 Lastly, I use WebGL to display renderings and 3D interpreted models on OASIS. 
-Specifically, I use the WebGL library ThreeJS\cite{todo}.
+Specifically, I use the WebGL library ThreeJS\footnote{http://threejs.org/[Accessed: April 8 2016]}.
 ThreeJS is a framework that provides useful wrappers for common WebGL functions.
-WebGL is supported on most web browsers including Google Chrome and Mozilla Firefox\cite{todo}.
+WebGL is supported on most web browsers including Google Chrome and Mozilla Firefox.
 Displaying complex 3D models on web browsers is non-trivial.
 As a result WebGL gives us the unique ability to have our sketching interface online in a platform independent manner.
 

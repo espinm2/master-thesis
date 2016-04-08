@@ -18,7 +18,7 @@ We will discuss how both OASIS and the Virtual Heliodon share common goals with 
 \section{Virtual Heliodon}
 
 
-	The Virtual Heliodon is a spatial augmented reality system with a tangible user interface for the early collaborative design of interior spaces with daylighting\cite{sheng2009virtual, cutler2009inferring,nasman2013physical,nasman2013evaluation,cutler2010interpreting}. 
+	The Virtual Heliodon is a spatial augmented reality system with a tangible user interface for the early collaborative design of interior spaces with daylighting\cite{sheng2009virtual, cutler2009inferring,nasman2013physical,cutler2010interpreting}. 
 	The Virtual Heliodon is composed of multiple projectors, a circular table, and a collection of foam primitives.  
 	A large frame holds the projectors above the table top at evenly spaced intervals. 
 	These projectors all face towards the table top at the center of the system;
@@ -28,8 +28,8 @@ We will discuss how both OASIS and the Virtual Heliodon share common goals with 
 	Some architectural spaces created on the Virtual Heliodon are shown in Figure-\ref{fig:heliodon_sketch}.
 	After the creation of a physical sketch, a network of computers use projectors to superimpose daylight renderings onto foam primitives placed on the table top.
 	The Virtual Heliodon requires multiple projectors in varying positions along the frame to superimpose renderings onto all of the wall primitives.
-	Projecting daylight renderings directly onto wall primitives creates an augmented reality environment that gives users a sense of immersion\cite{nasman2013evaluation}.
-	The Virtual Heliodon has gone through a few evaluations and has been shown to be engaging and valuable as an educational daylighting tool\cite{nasman2013evaluation}.
+	Projecting daylight renderings directly onto wall primitives creates an augmented reality environment that gives users a sense of immersion\cite{nasman2013physical}.
+	The Virtual Heliodon has gone through a few evaluations and has been shown to be engaging and valuable as an educational daylighting tool\cite{nasman2013physical}.
 
 	% Figures
 	\begin{figure}[h]
@@ -57,7 +57,7 @@ We will discuss how both OASIS and the Virtual Heliodon share common goals with 
 
 	Interpreting sketches is not the only method of turning concepts into 3D models.
 	Traditionally, both parametric and geometric modeling are used to create 3D models of architectural spaces.
-	Daylight analysis tools such as the Home Energy Efficient Design tool (HEED) and eQuest use parametric modeling to generate 3D models of architectural spaces\cite{hirsch2010equest,milne2001drag}.
+	Daylight analysis tools such as the Home Energy Efficient Design tool (HEED) and eQuest\footnote{http://www.doe2.com/equest/[Access: Apr 8 2016]} use parametric modeling to generate 3D models of architectural spaces\cite{milne2001drag}.
 	Parametric modeling is the creation of a model from a template by specifying parameters such as wall lengths, walls heights, and window positions through numerical entry.
 	Both HEED and eQuest are intended for use in the schematic design phase and offer a large variety of energy analysis measurements.
 	Due to the high cost of effort in parametrically designing an architectural space, both HEED and eQUEST feature wizards to guide users through the process. 
@@ -69,7 +69,7 @@ We will discuss how both OASIS and the Virtual Heliodon share common goals with 
 	The process of geometrically modeling a conceived architectural space in software is non-trivial.
 	Being able to geometrically model complex 3D geometries is an art that requires precision and a deep understanding of the geometric tools available.
 	As a result, the modeling of architectural designs in software is usually pushed back into the design development phase, where there are fewer large changes in design\cite{Galasiu}.
-	SketchUp and AutoDesk are both popular architectural design tools that use geometric modeling for the generation of architectural spaces\cite{todo,todo}. \\
+	SketchUp and AutoDesk\footnote{http://www.autodesk.com/[Accessed: Apr 8 2016]} are both popular architectural design tools that use geometric modeling for the generation of architectural spaces. \\
 
 	In practice, sketching is still used during the early design phase of architecture because of the unmatched speed \& efficiently it offers designers\cite{Galasiu}.
 	Architectural sketching interfaces were developed as an alternative to parametric and geometric modeling.
@@ -97,7 +97,7 @@ We will discuss how both OASIS and the Virtual Heliodon share common goals with 
 	The daylight rendering engine is specialized to provide viewpoint independent daylight renderings at interactive rates.
 	Photon mapping is the approximation of global illumination by tracing rays outward from emitters and then gathering photons after several bounces to calculate indirect illumination per triangle or patch\cite{hachisuka2008progressive}.
 	Window panes are considered emitters our daylight rendering engine; windows in our system emit both direct sunlight and diffuse skylight.
-	When photons are emitted from the window pane their position and direction are chosen at random; However, the intensity of an emitted photon is determined by its direction as defined by the appropriate International Commission on Illumination's (CIE) sky model\cite{de1994spatial}.
+	When photons are emitted from the window pane their position and direction are chosen at random; However, the intensity of an emitted photon is determined by its direction as defined by the appropriate International Commission on Illumination's (CIE) sky model\cite{matsuura1988luminance}.
 	An addition a non-recursive ray tracing procedure is used to take into consideration the hard edges of illumination caused from direct sun light. 
 	\\
 	% </Explanation of how DRE works>
@@ -140,19 +140,19 @@ We will discuss how both OASIS and the Virtual Heliodon share common goals with 
 	% <Vasari>
 	OASIS shares goals in common with other daylight analysis software.
 	Increased value on sustainability and energy efficiency drives the development of early design tools for daylight and performance analysis.
-	One such piece of software is AutoDesk's latest early design tool, Project Vasari\cite{todo,todo}.
-	Project Vasari is a stand alone geometric modeling software with an interface similar to AuthoDesk's Revit\cite{todo}.
+	One such piece of software is AutoDesk's latest early design tool, Project Vasari\footnote{http://autodeskvasari.com/[Accessed: Apr 8 2016]}.
+	Project Vasari is a stand alone geometric modeling software with an interface similar to AuthoDesk's Revit\footnote{http://www.autodesk.com/products/revit-family/[Accessed: Apr 8 2016]}.
 	Project Vasari, unlike Revit, was designed for energy analysis during the conceptual design of architectural spaces. 
 	Project Vasari comes packaged with a suite of energy analysis visualizations, including several daylighting visualizations.\\
 	% </Vasari>
 
 	% <Plug ins>
 	Most major architectural design tools support energy analysis plug-ins; These plug-ins come packaged with a variety of energy metrics and visualizations, including daylighting visuals.
-	A tool with similar features to Project Vasari is Ecotect -- an AutoDesk plug-in\cite{ecotect}.
+	A tool with similar features to Project Vasari is Ecotect\footnote{http://usa.autodesk.com/ecotect-analysis/[Access: Apr 8 2016]} -- an AutoDesk plug-in.
 	Ecotect offers a collection of useful visualizations such as sun paths, building shadow previews, and daylighting factor visuals. \\
 
-	SketchUp is another notable conceptual design tool that does not directly support energy analysis or advance daylighting features\cite{sketchup}; however there are a handful of plug-ins for SketchUp that do.
-	For example VE-Ware by IES is a free energy plug-in for SketchUp and Revit\cite{todo}. 
+	SketchUp is another notable conceptual design tool that does not directly support energy analysis or advance daylighting features\footnote{http://www.sketchup.com/[Accessed: Apr 8 2016]}; however there are a handful of plug-ins for SketchUp that do.
+	For example VE-Ware by IES is a free energy plug-in for SketchUp and Revit. 
 	Given a model created in SketchUp VE-Ware will generate detailed energy analysis reports.
 	Also, another noteworthy SketchUp extension is Lightsolve\cite{andersen2008intuitive}.
 	While Lightsolve is not officially a SketchUp plug-in, LightSolve does support importing models directly from SketchUp.
@@ -162,7 +162,7 @@ We will discuss how both OASIS and the Virtual Heliodon share common goals with 
 	Lightsolve also provides visuals on the sun's position and elevation information on the same page as the daylighting metrics and renderings. 
 	All of these visual elements on the same display offers designers a better understanding of the daylighting conditions within their design\cite{andersen2011informing}. \\
 
-	Lastly, Rhinoceros is a general 3D Modeling tool commonly used for creating non-axis aligned architectural models and supports plug-ins such as LadyBug for basic energy analysis\cite{todo,ladybug}.
+	Lastly, Rhinoceros\footnote{https://www.rhino3d.com/[Accessed: Apr 8 2016]} is a general 3D Modeling tool commonly used for creating non-axis aligned architectural models and supports plug-ins such as LadyBug for basic energy analysis\cite{ladybug}.
 	LadyBug supports a wide variety of energy analysis visualizations, but only has a few visualizations specific to daylighting analysis -- including sun path visuals and hourly radiation studies in real time. \\
 	% <Plug ins>
 

@@ -24,7 +24,7 @@
     institution  = "United States Department of Labor",
     language     = "English",
     howpublished = "Online",
-    url          = "https://www.osha.gov/pls/oshaweb/owadisp.show\_document?p\_table=STANDARDS\&p\_id=10630",
+    url          = "https://www.osha.gov/",
     note         = "Part Number 1926.56"
 }
 
@@ -175,8 +175,10 @@ eprint = {
     title   = "The Daylighting Design Process – tools for predicting daylight and techniques for making sound decisions about daylight during design",
     journal = "The National Institute of Building Sciences",
     year    = "2010",
-    URL     = { "https://c.ymcdn.com/sites/www.nibs.org/resource/resmgr/BEST/BEST2\_023\_EE7-1.pdf"}
+    address = "Portland, Oregon",
+    URL= { "https://c.ymcdn.com/sites/www.nibs.org/resource/resmgr/BEST/BEST2\_023\_EE7-1.pdf"}
 }
+
 @article{Suwa,
   title={What do architects and students perceive in their design sketches? A protocol analysis},
   author={Suwa, Masaki and Tversky, Barbara},
@@ -229,12 +231,16 @@ eprint = {
   publisher={Univ. of Washington, Seattle}
 }
 
-@misc{reinhart_lecture, 
-  title={GSD 6332 – Rules of Thumb I}, 
-  url={http://isites.harvard.edu/fs/docs/icb.topic466781.files/l04.6332.rulesofthumb.pdf}, 
-  author={Reinhart, Christoph}}
-Electronic lecture notes from his class: Day-Lighting Buildings
-
+@article{reinhart_lecture,
+  title={A rules of thumb-based design sequence for diffuse daylight},
+  author={Reinhart, Christoph F and LoVerso, VRM},
+  journal={Lighting Research and Technology},
+  volume={42},
+  number={1},
+  pages={7--31},
+  year={2010},
+  publisher={SAGE Publications}
+}
 @book{moore,
   title={Concepts and practice of architectural daylighting},
   author={Moore, Fuller},
@@ -251,15 +257,22 @@ Electronic lecture notes from his class: Day-Lighting Buildings
   publisher={Springer}
 }
 
-@article{nasman2013evaluation,
-  title={Evaluation of user interaction with daylighting simulation in a tangible user interface},
-  author={Nasman, Joshua and Cutler, Barbara},
-  journal={Automation in Construction},
-  volume={36},
-  pages={117--127},
-  year={2013},
-  publisher={Elsevier}
-}
+
+inproceedings{nasman2013evaluation,
+ author = {Nasman, Joshua and Cutler, Barbara},
+    title = {{Evaluation} of a tangible interface for architectural daylighting analysis},
+    booktitle = {{Proceedings} of the {ACM} {SIGGRAPH} {Symposium} on {Interactive} 3D {Graphics} and {Games}},
+ series = {I3D '12},
+ year = {2012},
+ address = {Costa Mesa, California},
+ pages = {207--207},
+ numpages = {1},
+ url = {http://doi.acm.org/10.1145/2159616.2159653},
+ doi = {10.1145/2159616.2159653},
+ acmid = {2159653},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
 
 @inproceedings{nasman2013physical,
   title={Physical Avatars in a Projector-Camera Tangible User Interface Enhance Quantitative Simulation Analysis and Engagement},
@@ -276,13 +289,16 @@ Electronic lecture notes from his class: Day-Lighting Buildings
   year={2009}
 }
 
-@inproceedings{sheng2009virtual,
-  title={Virtual heliodon: Spatially augmented reality for architectural daylighting design},
-  author={Sheng, Yu and Yapo, Theodore C and Young, Christopher and Cutler, Barbara},
-  booktitle={Virtual Reality Conference, 2009. VR 2009. IEEE},
-  pages={63--70},
-  year={2009},
-  organization={IEEE}
+@article{sheng2009virtual,
+    title = {{A} spatially augmented reality sketching interface for architectural daylighting design},
+author = "Yu Sheng and Theodore C. Yapo and Christopher Young and Barbara Cutler",
+year = "2011", 
+month = "January",
+journal = "IEEE Transactions on Visualization and Computer Graphics",
+vol = "17",
+issue = "1",
+pages = "38--50",
+publisher = "IEEE"
 }
 
 @inproceedings{milne2001drag,
@@ -294,7 +310,7 @@ Electronic lecture notes from his class: Day-Lighting Buildings
   organization={AMERICAN SOLAR ENERGY SOC \& THE AMERICAN INSTITUTE OF ARCHITECTS}
 }
 
-@misc{hirsch2010equest,
+misc{hirsch2010equest,
   title={eQUEST, quick energy simulation tool: Introductory tutorial},
   author={Hirsch, JJ},
   year={2010},
@@ -336,14 +352,14 @@ Electronic lecture notes from his class: Day-Lighting Buildings
   year={2013}
 }
 
-@book{sketchup,
+book{sketchup,
   title={Google Sketchup for site design: a guide to modeling site plans, terrain and architecture},
   author={Tal, Daniel},
   year={2010},
   publisher={John Wiley \& Sons}
 }
 
-@article{ecotect,
+article{ecotect,
   title={Ecotect (software)},
   author={Marsh, Andrew},
   journal={Australia: Western University},
@@ -381,7 +397,14 @@ Electronic lecture notes from his class: Day-Lighting Buildings
   publisher={ACM}
 }
 
-@misc{de1994spatial,
+@article{matsuura1988luminance,
+  title={Luminance distributions of various reference skies},
+  author={Matsuura, K},
+  journal={Tokyo, CIE Div},
+  volume={3},
+  year={1988}
+}
+misc{de1994spatial,
   title={Spatial distribution of daylight—luminance distributions of various reference skies},
   author={DE L’ECLAIRAGE, CIE COMISSION INTERNATIONALE},
   year={1994},
@@ -463,12 +486,6 @@ Electronic lecture notes from his class: Day-Lighting Buildings
   publisher={Taylor \& Francis}
 }
     
-@UNPUBLISHED {todo,
-    author = "looking for citation",
-    title  = "lost citations 404",
-    note   = "pelase file this citation",
-    year   = "2016"
-}
 
 @inproceedings{sheng2011perceptual,
   title={Perceptual global illumination cancellation in complex projection environments},
@@ -523,3 +540,18 @@ address = {New York, NY, USA},
   year={2013},
   publisher={ACM}
 }
+
+
+@inproceedings{Dostal,
+ author = {Dost\'{a}l, Martin},
+    title = {{User} {Acceptance} of the {Microsoft} {Ribbon} {User} {Interface}},
+    booktitle = {{Proc.} 9th {WSEAS} {Int.} {Conf.} {Data} {Netw.,} {Comm.,} {Comput.s}},
+ series = {DNCOCO'10},
+ year = {2010},
+ address = {Faro, Portugal},
+ pages = {143--149},
+ numpages = {7},
+ acmid = {1948832},
+ publisher = {World Scientific and Engineering Academy and Society (WSEAS)},
+ address = {Stevens Point, Wisconsin, USA},
+} 
