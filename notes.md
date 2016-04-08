@@ -122,3 +122,26 @@ material properties and clear glass
 
 Although feedback from novice user is helpful in evaluating some elements of OASIS, we require feedback from experienced users to make large design choice pertaining to architectural analysis.
 
+Chapter Summary Notes
+=====================
+We had people use our tool
+It was encouraging b/c feedback guides designing
+interesting experiment in participant driven feature design
+
+Issue with large number of users leaving without trying it out + use our tool without feedback.
+We need more expert users to drive OASIS development
+Novice feedback helpful with UI choices
+Such as doors
+
+Better word our feedback questions
+
+Overall it was insightful
+
+
+Future work to do as particicpent drive feature design
+
+Future work on sketching interface
+
+Future work on daylight
+
+OASIS looks promising as participant driven feature thingy + hopes that this tool might one day save someone $$$ and time on architectrual projects.

@@ -17,6 +17,12 @@ Both OASIS and the Virtual Heliodon provide a novel solution to the challenge of
 In addition to sharing the same objectives both OASIS and the Virtual Heliodon utilize the physical sketch interpretation algorithm and the daylight rendering engine.
 As a result it can be difficult to see where these two systems vary.
 In order to understand the contributions I made to OASIS we must briefly cover the system pipeline of the Virtual Heliodon.
+\begin{figure}[!ht]
+\centering
+\caption[The Virtual Heliodon's simplified pipeline.]{Virtual Heliodon's simplified pipeline. A and B are locations in the pipeline that require an experienced operator to perform technical actives on the Virtual Heliodon. }
+\label{fig:pipeline_vh}
+\includegraphics[width=1.0\textwidth]{pipeline_vh}
+\end{figure}
 The Virtual Heliodon's system pipeline is illustrated in Figure-\ref{fig:pipeline_vh}.
 To begin, the Virtual Heliodon features a novel tangible user interface for the creation of architectural spaces.
 Users define architectural spaces by manipulating physical foam primitives with their hands.
@@ -31,12 +37,6 @@ These scripts would include invoking the daylight rendering engine to generate i
 In other words, the Virtual Heliodon does not offer much autonomy and requires an operator to both explain how to use the tangible user interface and constantly communicate with users to operate the Virtual Heliodon.
 % </Pipeline of the Virtual Heliodon>
 
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=1.0\textwidth]{pipeline_vh}
-\caption{Virtual Heliodon's simplified pipeline. A and B are locations in the pipeline that require an experienced operator to perform technical actives on the Virtual Heliodon. }
-\label{fig:new_pipeline}
-\end{figure}
 
 \paragraph{OASIS Pipeline}
 OASIS is an alternative interface to the Virtual Heliodon. 
@@ -46,6 +46,12 @@ To begin, users on OASIS generate 2D sketches consisting of lines that represent
 The physical sketch interpretation algorithm that the Virtual Heliodon uses to generate watertight 3D meshes for simulations require sketches be given as a collection of model primitives. 
 Therefore, before being able to invoke the physical sketch interpretation algorithm, OASIS generates the intermediate primitives file.
 Model primitives are stored in an intermediate primitives file where each line describes a wall,window, or furniture item in a sketch.
+\begin{figure}[!ht]
+\centering
+\caption[Diagram of OASIS pipeline.]{OASIS pipeline diagram with the author's contributions noted in blue.}
+\label{fig:new_pipeline}
+\includegraphics[width=1.0\textwidth]{new_pipeline}
+\end{figure}
 As mentioned previously, in the Virtual Heliodon the intermediate primitives file is created by a simple computer vision algorithm that detects walls, windows, and tokens through colored markers placed on the top of physical primitives.
 Since the sketching interface is purely in-software, I can directly create this intermediate primitives file without need of a computer vision algorithm to detect primitives.
 Interestingly, OASIS avoids a few limitations of the Virtual Heliodon by bypassing the need to detect physical primitives. 
@@ -62,12 +68,7 @@ On the \textit{Analyze Daylighting} page, I map these texture images onto the 3D
 Figure-\ref{fig:new_pipeline}C illustrates where texture mapping occurs in the system pipeline.
 In brief, our pipeline shows that OASIS is an alternative autonomous interface to the physical sketch interpretation algorithm and daylight rendering engine used in the Virtual Heliodon.
 
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=1.0\textwidth]{new_pipeline}
-\caption{OASIS pipeline diagram with the author's contributions noted in blue.}
-\label{fig:new_pipeline}
-\end{figure}
+
 
 \paragraph{Basic Navigation and Pages}
 
@@ -77,6 +78,14 @@ Each respective page, allows users to interact with different portions of our sy
 For beginners it is recommended that pages are followed linearly from step 1 to step 5.
 Figure-\ref{fig:overview}A illustrates the first page users encounter when opening our web application.
 The \textit{Login/Registration} page is designed to be as minimal as possible to encourage users to register and try out OASIS.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.8\textwidth]{overview}
+\caption{This is an overview of the pages on OASIS.}
+\label{fig:overview}
+\end{figure}
+
 After a successful login or registration, the first page users are directed to is the \textit{Create/Load Model} page.
 The \textit{Create/Load Model} page contains a selectable list of users' previously created sketches and the option to create new sketches.
 The \textit{Create/Load Model} page is illustrated in Figure-\ref{fig:overview}B.
@@ -96,16 +105,9 @@ Figure-\ref{fig:overview}F illustrates the \textit{Analyze Simulation} page.
 The \textit{Analyze Simulation} page will also host a variety of daylight visualizations that users can toggle between to perform both qualitative and quantitative daylight analysis.
 All in all, we hope that OASIS has a small learning curve and allows users to quickly preform daylight analysis with the least cost of effort.
 
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=0.8\textwidth]{overview}
-\caption{This is an overview of the pages on OASIS.}
-\label{fig:overview}
-\end{figure}
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=1\textwidth]{task}
 \caption[How to create a request for daylighting simulations.]{How to create a request for daylighting simulations. 
 A) The user must first click on the \textit{create new task} button.
 B) The user must then define daylighting parameters such as date and time. Once complete the user may click the submit button to submit their request.
@@ -114,6 +116,7 @@ D) Once the task is complete the user can click on the view button
 E) The user will be redirected to the \textit{Analyze Simulation} tab to view their rendering.
 }
 \label{fig:task}
+\includegraphics[width=1\textwidth]{task}
 \end{figure}
 
 \clearpage
@@ -178,24 +181,24 @@ Overall, further testing, such as A/B testing, would be required before any conc
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.8\textwidth]{oldvh}
-\caption{
-Similarities between the drag-and-drop procedure and the Virtual Heliodon's Tangible User Interface. 
-% A) Users select a physical primitive from a collection of primitives. 
-% B) Users place primitive on the table top. 
-% C) Users adjust the primitive as desired. 
-% D) Users select a primitive from a tray on the bottom of the interface. 
-% E) Users drag that item onto the table. 
-% F) Users use FreeTransform handles to scale and rotate the primitive as desired.
+\caption
+[Similarities between the drag-and-drop procedure and the Virtual Heliodon's Tangible User Interface.]{
+ A) Users select a physical primitive from a collection of primitives. 
+ B) Users place primitive on the table top. 
+ C) Users adjust the primitive as desired. 
+ D) Users select a primitive from a tray on the bottom of the interface. 
+ E) Users drag that item onto the table. 
+ F) Users use FreeTransform handles to scale and rotate the primitive as desired.
 }
 \label{fig:oldvh}
+\includegraphics[width=0.8\textwidth]{oldvh}
 \end{figure}
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.8\textwidth]{wall_win}
 \caption{How to create walls and windows via the click-draw-release procedure.}
 \label{fig:wall_win}
+\includegraphics[width=0.8\textwidth]{wall_win}
 \end{figure}
 
 % Discussion about Eric's work
@@ -243,7 +246,6 @@ While, OASIS does not support this drag-to-remove procedure,  implementing and A
 % Include figure
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.8\textwidth]{remove}
 \caption{How to remove an item from the canvas via the click-to-remove procedure. 
 % A) First users must select the remove button located on the ribbon. 
 % B) Second the user must move mouse over the time to be deleted. 
@@ -251,6 +253,7 @@ While, OASIS does not support this drag-to-remove procedure,  implementing and A
 % D) If the red highlighted item is the correct item to be removed click the left mouse button. 
 }
 \label{fig:remove}
+\includegraphics[width=0.8\textwidth]{remove}
 \end{figure}
 
 \paragraph{Cardinal Orientation}
@@ -270,10 +273,10 @@ Testing would be required to conclude which method of defining cardinal orientat
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.8\textwidth]{geoloc}
 \caption{
 How to set the cardinal orientation and geographical location of a sketch.}
 \label{fig:geoloc}
+\includegraphics[width=0.8\textwidth]{geoloc}
 \end{figure}
 
 \paragraph{Geographical Positioning}
@@ -304,9 +307,9 @@ Alternative interfaces have been considered, however not pursued at this time. A
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.8\textwidth]{viewer}
 \caption{On the left is an example of the sketch interpretation viewer and on the right is an example of the daylight rendering viewer.}
 \label{fig:viewer}
+\includegraphics[width=0.8\textwidth]{viewer}
 \end{figure}
 
 \paragraph{Daylight Rendering Viewer}
@@ -315,21 +318,20 @@ This viewer supports the same navigation controls as the sketch interpretation v
 In Figure-\ref{false_color}B the false color visualization brings users attention to areas that suffer from over and under illumination. This feature was ported from the Virtual Heliodon and displays a textured checkerboard image on surfaces that fall below or above specific thresholds in relation to the daylight rendering engine's illumination values\cite{nasman2013evaluation}. Red checkerboard patterns are used to represent over illumination and blue checkerboard patterns for under illumination.Our intention as an early design tool is to have users analyze the daylight visualization results on the \textit{Analyze Simulation} page. From their analysis users are either satisfied with the distribution of daylight in their model or choose to make renovations. Improvements include making alterations to diffuse lighting if over illumination is a problem. Additionally, improvements could include making windows larger or changing the orientation of the room to make better use of daylight. Overall, the daylight rendering viewer should not be the final step on users' work flow in OASIS, but instead be a point of evaluation that communicates to users where problems lie so that they may go back and make edits to their design and continue the cycle of the creative iterative design process. 
 
 
-
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.8\textwidth]{false_color}
-\caption{The two visualization modes of the daylight rendering viewer. On the left is a daylight rendering of a model and on the right is a false-color visualization of a model highlighting areas that suffer from over and under illumination.}
+\caption[The two visualization modes of the daylight rendering viewer.]{The two visualization modes of the daylight rendering viewer. On the left is a daylight rendering of a model and on the right is a false-color visualization of a model highlighting areas that suffer from over and under illumination.}
 \label{fig:false_color}
+\includegraphics[width=0.8\textwidth]{false_color}
 \end{figure}
 
 \paragraph{Share A Model Viewer}
 Current work is being done on a \textit{Share A Model} viewer. This viewer would allow users to share models via generated URLS.The purpose of this viewer is two fold. Firstly, I suspect it would make sharing models between users much easier than sharing accounts or taking screenshots of OASIS and replicating sketches via tracing. In essence this feature would allow users to fork models from other users. Secondly, I hope this feature would allow users to share models between non-users, including family and friends. Rather than taking screenshots, non-users can visit the URL provided from a user and view the 3D rendering of a model without needing to sign up for an account. Figure-\ref{fig:share} illustrates the viewer in its current state. As mentioned, this stand alone viewer is currently under development.
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.8\textwidth]{share}
-\caption{Share A Model viewer in its current state of development. No user registration is required to view a model.}
+\caption[Share A Model viewer in its current state of development.]{Share A Model viewer in its current state of development. No user registration is required to view a model.}
 \label{fig:share}
+\includegraphics[width=0.8\textwidth]{share}
 \end{figure}
 
 \section{General Web Application Design}
@@ -343,21 +345,21 @@ Additionally, I made the design choice of having OASIS appear in its own web bro
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=1\textwidth]{ribbon}
 \caption{On the top is Microsoft Word's ribbon and on the bottom is OASIS' version of a ribbon.}
 \label{fig:ribbon}
+\includegraphics[width=1\textwidth]{ribbon}
 \end{figure}
 
 \paragraph{Nonlinear Navigation in OASIS}
 Although we recommend beginners navigate pages on OASIS linearly, nonlinear navigation is also supported. For example, non-first time users can log into OASIS and jump directly to the \textit{Generate a 3D Model} page. This page will display the last model the user was working on before leaving OASIS. Similarly, a non-first time user logging back into OASIS can jump to the \textit{Sketch A Room} page and the last sketch the user was working on before leaving OASIS will be displayed. 
-Users can nonlinearly move between the \textit{Create/Load Model} page ,  the {Sketch A Room} page , the \textit{Generate a 3D Model} page and the \textit{Create A Daylight Simulation} page without state changes to OASIS. However, the \textit{Analyze Simulation} page is only reachable through the viewing of a daylight simulation from the \textit{Create A Daylight Simulation} page. Additionally, when viewing the daylight renderings of a model on the \textit{Analyze Simulation} page a state change occurs. Viewing a rendering has the same effect as loading a sketch; this change will be reflected if a user navigates to the \textit{Generate a 3D Model} page or the \textit{Sketch A Room} page. Figure-\ref{fig:states} illustrates the navigation between pages on OASIS. Overall, OASIS supports nonlinear navigation to save advance users time from having to follow pages linearly.
-
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=0.8\textwidth]{states}
-\caption{This is a navigation diagram between pages and menus on OASIS.}
-\label{fig:states}
-\end{figure}
+Users can nonlinearly move between the \textit{Create/Load Model} page ,  the {Sketch A Room} page , the \textit{Generate a 3D Model} page and the \textit{Create A Daylight Simulation} page without state changes to OASIS. However, the \textit{Analyze Simulation} page is only reachable through the viewing of a daylight simulation from the \textit{Create A Daylight Simulation} page. Additionally, when viewing the daylight renderings of a model on the \textit{Analyze Simulation} page a state change occurs. Viewing a rendering has the same effect as loading a sketch; this change will be reflected if a user navigates to the \textit{Generate a 3D Model} page or the \textit{Sketch A Room} page. Overall, OASIS supports nonlinear navigation to save advance users time from having to follow pages linearly.
+%Figure-\ref{fig:states} illustrates the navigation between pages on OASIS
+% \begin{figure}[!ht]
+% \centering
+% \includegraphics[width=0.8\textwidth]{states}
+% \caption{This is a navigation diagram between pages and menus on OASIS.}
+% \label{fig:states}
+% \end{figure}
 
 
 \section{Problems Encountered During System Design}
